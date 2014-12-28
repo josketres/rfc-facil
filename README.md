@@ -3,6 +3,18 @@ rfc-facil
 
 Libreria para calcular el Registro Federal de Contribuyentes en México (RFC) en Java.
 
+Uso
+---
+Calcular el rfc de una persona física es muy sencillo:
+
+    Rfc rfc = new Rfc.Builder()
+                .name("Josué")
+                .firstLastName("Zarzosa")
+                .secondLastName("de la Torre")
+                .birthday(5, 8, 1987)
+                .build();
+    System.out.println(rfc.toString());
+
 License
 -------
 
