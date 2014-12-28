@@ -5,6 +5,9 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Calculates a two-digits code known as "homoclave".
+ */
 class HomoclaveCalculator {
 
     private static final String HOMOCLAVE_DIGITS = "123456789ABCDEFGHIJKLMNPQRSTUVWXYZ";
@@ -56,8 +59,7 @@ class HomoclaveCalculator {
 
     private String fullName;
     private String mappedFullName;
-    private int intSum;
-    private int lastThreeDigits;
+    private int pairsOfDigitsSum;
     private String homoclave;
 
     public HomoclaveCalculator(Person person) {
@@ -70,7 +72,6 @@ class HomoclaveCalculator {
         normalizeFullName();
         mapFullNameToDigitsCode();
         sumPairsOfDigits();
-        splitLastThreeDigitsOfSum();
         buildHomoclave();
 
         return homoclave;
@@ -78,23 +79,19 @@ class HomoclaveCalculator {
 
     private void buildHomoclave() {
 
+        int lastThreeDigits = pairsOfDigitsSum % 1000;
         int quo = lastThreeDigits / 34;
         int reminder = lastThreeDigits % 34;
         homoclave = HOMOCLAVE_DIGITS.charAt(quo) + "" + HOMOCLAVE_DIGITS.charAt(reminder);
     }
 
-    private void splitLastThreeDigitsOfSum() {
-
-        lastThreeDigits = intSum % 1000;
-    }
-
     private void sumPairsOfDigits() {
 
-        intSum = 0;
+        pairsOfDigitsSum = 0;
         for (int i = 0; i < mappedFullName.length() - 1; i++) {
             int intNum1 = Integer.parseInt(mappedFullName.substring(i, i + 2));
             int intNum2 = Integer.parseInt(mappedFullName.substring(i + 1, i + 2));
-            intSum += intNum1 * intNum2;
+            pairsOfDigitsSum += intNum1 * intNum2;
         }
     }
 

@@ -1,13 +1,13 @@
 package com.josketres.rfcfacil;
 
 /**
- * Calculates the first twelve digits of the RFC.
+ * Calculates the first ten digits of the RFC.
  */
-class FirstTwelveDigitsCalculator {
+class TenDigitsCodeCalculator {
 
     private final Person person;
 
-    public FirstTwelveDigitsCalculator(Person person) {
+    public TenDigitsCodeCalculator(Person person) {
 
         this.person = person;
     }

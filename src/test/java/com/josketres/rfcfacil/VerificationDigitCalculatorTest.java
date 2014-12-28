@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class LastDigitCalculatorTest {
+public class VerificationDigitCalculatorTest {
 
     @Test
     public void foo_bar() {
