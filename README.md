@@ -13,7 +13,12 @@ Calcular el rfc de una persona física es muy sencillo:
                 .secondLastName("de la Torre")
                 .birthday(5, 8, 1987)
                 .build();
+                
+    // puedes usar el rfc completo
     System.out.println(rfc.toString());
+    
+    // o partes de el mismo
+    System.out.println(rfc.homoclave);
 
 License
 -------
