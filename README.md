@@ -16,12 +16,12 @@ Rfc rfc = new Rfc.Builder()
             .build();
 
 // se puede obtener el rfc completo
-rfc.toString() // ZATJ870805CK6
+System.out.println(rfc.toString());        // ZATJ870805CK6
 
 // se pueden obtener partes del rfc
-rfc.tenDigitsCode     // ZATJ870805
-rfc.homoclave         // CK
-rfc.verificationDigit // 6
+System.out.println(rfc.tenDigitsCode);     // ZATJ870805
+System.out.println(rfc.homoclave);         // CK
+System.out.println(rfc.verificationDigit); // 6
 ```
 License
 -------
