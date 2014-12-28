@@ -1,5 +1,8 @@
 apply plugin: 'java'
-apply plugin: 'groovy'
+
+sourceCompatibility = 1.6
+version = '0.1.0'
+
 repositories {
    mavenCentral()
 }

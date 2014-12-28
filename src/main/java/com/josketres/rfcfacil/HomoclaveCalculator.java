@@ -11,7 +11,7 @@ import java.util.Map;
 class HomoclaveCalculator {
 
     private static final String HOMOCLAVE_DIGITS = "123456789ABCDEFGHIJKLMNPQRSTUVWXYZ";
-    private static final Map<String, String> FULL_NAME_MAPPING = new HashMap<>();
+    private static final Map<String, String> FULL_NAME_MAPPING = new HashMap<String, String>();
 
     static {
         FULL_NAME_MAPPING.put(" ", "00");
