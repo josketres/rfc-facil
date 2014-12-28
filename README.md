@@ -15,11 +15,13 @@ Rfc rfc = new Rfc.Builder()
             .birthday(5, 8, 1987)
             .build();
 
-// puedes usar el rfc completo
-System.out.println(rfc.toString());
+// se puede obtener el rfc completo
+rfc.toString() // ZATJ870805CK6
 
-// o partes de el mismo
-System.out.println(rfc.homoclave);
+// se pueden obtener partes del rfc
+rfc.tenDigitsCode     // ZATJ870805
+rfc.homoclave         // CK
+rfc.verificationDigit // 6
 ```
 License
 -------
