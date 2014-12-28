@@ -7,6 +7,7 @@ Uso
 ---
 Calcular el rfc de una persona física es muy sencillo:
 ```java
+// Josue Zarzosa de la Torre nacido el 5 de Agosto de 1987
 Rfc rfc = new Rfc.Builder()
             .name("Josué")
             .firstLastName("Zarzosa")
