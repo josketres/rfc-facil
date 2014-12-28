@@ -14,6 +14,6 @@ class VerificationDigitCalculator {
     }
 
     public String calculate() {
-        return null;
+        return "";
     }
 }
