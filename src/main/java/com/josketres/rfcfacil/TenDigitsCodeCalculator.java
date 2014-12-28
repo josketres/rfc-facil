@@ -28,7 +28,6 @@ class TenDigitsCodeCalculator {
                 + firstVowelExcludingFirstCharacterOf(person.firstLastName)
                 + firstLetterOf(person.secondLastName)
                 + firstLetterOf(person.name)
-                + " "
                 + lastTwoDigitsOf(person.year)
                 + formattedInTwoDigits(person.month)
                 + formattedInTwoDigits(person.day);
@@ -53,13 +52,13 @@ class TenDigitsCodeCalculator {
     private String normalize(String word) {
 
         String normalizedWord = StringUtils.stripAccents(word).toUpperCase();
-        return removeExcludedParticles(normalizedWord, SPECIAL_PARTICLES);
+        return removeSpecialParticles(normalizedWord, SPECIAL_PARTICLES);
     }
 
-    private String removeExcludedParticles(String word, String[] excludedParticles) {
+    private String removeSpecialParticles(String word, String[] specialParticles) {
 
         StringBuilder newWord = new StringBuilder(word);
-        for (String particle : excludedParticles) {
+        for (String particle : specialParticles) {
             String[] particlePositions = {particle + " ", " " + particle};
             for (String p : particlePositions)
                 while (newWord.toString().contains(p)) {

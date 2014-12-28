@@ -1,7 +1,5 @@
 package com.josketres.rfcfacil;
 
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -19,9 +17,9 @@ public class RfcTest {
                 .birthday(5, 8, 1987)
                 .build();
 
-        assertThat(rfc.tenDigitsCode, equalTo("ZATJ 870805"));
+        assertThat(rfc.tenDigitsCode, equalTo("ZATJ870805"));
         assertThat(rfc.homoclave, equalTo("CK"));
-        assertThat(rfc.verificationDigit, equalTo(""));
-        assertThat(rfc.toString(), equalTo("ZATJ 870805CK"));
+        assertThat(rfc.verificationDigit, equalTo("6"));
+        assertThat(rfc.toString(), equalTo("ZATJ870805CK6"));
     }
 }

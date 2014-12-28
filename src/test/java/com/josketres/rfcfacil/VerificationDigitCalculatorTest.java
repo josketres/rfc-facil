@@ -1,13 +1,19 @@
 package com.josketres.rfcfacil;
 
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class VerificationDigitCalculatorTest {
 
     @Test
-    public void foo_bar() {
+    public void should_calculate_verification_digit() {
 
+        MatcherAssert.assertThat(verificationDigit("GODE561231GR"), Matchers.equalTo("8"));
+    }
+
+    private String verificationDigit(String rfc12Digit) {
+
+        return new VerificationDigitCalculator(rfc12Digit).calculate();
     }
 }

@@ -18,7 +18,7 @@ public class Rfc {
 
     @Override
     public String toString() {
-        
+
         return tenDigitsCode + homoclave + verificationDigit;
     }
 
@@ -62,7 +62,7 @@ public class Rfc {
 
             String tenDigitsCode = new TenDigitsCodeCalculator(person).calculate();
             String homoclave = new HomoclaveCalculator(person).calculate();
-            String verificationDigit = new VerificationDigitCalculator(person).calculate();
+            String verificationDigit = new VerificationDigitCalculator(tenDigitsCode + homoclave).calculate();
 
             return new Rfc(tenDigitsCode, homoclave, verificationDigit);
         }
