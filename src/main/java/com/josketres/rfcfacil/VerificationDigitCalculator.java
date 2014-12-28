@@ -6,4 +6,14 @@ package com.josketres.rfcfacil;
  */
 class VerificationDigitCalculator {
 
+    private final Person person;
+
+    public VerificationDigitCalculator(Person person) {
+
+        this.person = person;
+    }
+
+    public String calculate() {
+        return null;
+    }
 }

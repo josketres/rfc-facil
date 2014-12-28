@@ -5,11 +5,21 @@ package com.josketres.rfcfacil;
  */
 public class Rfc {
 
+    public final String tenDigitsCode;
     public final String homoclave;
+    public final String verificationDigit;
 
-    private Rfc(String homoclave) {
+    private Rfc(String tenDigitsCode, String homoclave, String verificationDigit) {
 
+        this.tenDigitsCode = tenDigitsCode;
         this.homoclave = homoclave;
+        this.verificationDigit = verificationDigit;
+    }
+
+    @Override
+    public String toString() {
+        
+        return tenDigitsCode + homoclave + verificationDigit;
     }
 
     public static class Builder {
@@ -49,9 +59,12 @@ public class Rfc {
         public Rfc build() {
 
             Person person = new Person(name, firstLastName, secondLastName, day, month, year);
-            String homoclave = new HomoclaveCalculator(person).calculate();
 
-            return new Rfc(homoclave);
+            String tenDigitsCode = new TenDigitsCodeCalculator(person).calculate();
+            String homoclave = new HomoclaveCalculator(person).calculate();
+            String verificationDigit = new VerificationDigitCalculator(person).calculate();
+
+            return new Rfc(tenDigitsCode, homoclave, verificationDigit);
         }
     }
 }
