@@ -29,7 +29,7 @@ print(rfc.verificationDigit); // 6
 Download
 --------
 
-Baja directamente [el archivo JAR de la versión más actual][2] o declara la dependencia vía Maven:
+Baja directamente [el JAR de la versión más actual][2] o declara la dependencia vía Maven:
 ```xml
 <dependency>
   <groupId>com.josketres</groupId>
@@ -37,7 +37,7 @@ Baja directamente [el archivo JAR de la versión más actual][2] o declara la de
   <version>1.0.0</version>
 </dependency>
 ```
-o Gradle:
+o con Gradle:
 ```groovy
 compile 'com.josketres:rfcfacil:1.0.0'
 ```
