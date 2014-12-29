@@ -30,7 +30,7 @@ Fuentes
 ---
 Esta librería se basa en documentación oficial obtenida por medio del IFAI (Instituto Federal de Acceso a la Información). El documento puede ser consultado en el sitio de [INFOMEX](https://www.infomex.org.mx/gobiernofederal/moduloPublico/moduloPublico.action) con el folio `0610100135506`.
 
-License
+Licencia
 -------
 
     Copyright 2014 Josué Zarzosa
