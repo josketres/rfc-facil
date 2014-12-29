@@ -91,4 +91,22 @@ afterEvaluate { project ->
         required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
         sign configurations.archives
     }
+
+    task javadocs(type: Javadoc) {
+        source = sourceSets.main.allJava
+    }
+
+    task javadocsJar(type: Jar, dependsOn: javadocs) {
+        classifier = 'javadoc'
+        from javadocs.destinationDir
+    }
+
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from sourceSets.main.allJava
+    }
+
+    artifacts {
+        archives sourcesJar, javadocsJar
+    }
 }
