@@ -118,7 +118,7 @@ class HomoclaveCalculator {
                 person.secondLastName + " " + person.name).toUpperCase();
 
         fullName = StringUtils.stripAccents(rawFullName);
-        fullName = fullName.replaceAll("[\\-\\.\\']", ""); // remove .'-
+        fullName = fullName.replaceAll("[\\-\\.']", ""); // remove .'-
         fullName = addMissingCharToFullName(rawFullName, 'Ñ');
 
     }
