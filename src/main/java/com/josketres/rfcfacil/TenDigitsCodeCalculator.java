@@ -17,6 +17,12 @@ class TenDigitsCodeCalculator {
     public static final String[] SPECIAL_PARTICLES =
             {"DE", "LA", "LAS", "MC", "VON", "DEL", "LOS", "Y", "MAC", "VAN", "MI"};
 
+    public static final String[] FORBIDDEN_WORDS = {
+            "BUEI", "BUEY", "CACA", "CACO", "CAGA", "KOGE", "KAKA", "MAME", "KOJO", "KULO",
+            "CAGO", "COGE", "COJE", "COJO", "FETO", "JOTO", "KACO", "KAGO", "MAMO", "MEAR", "MEON",
+            "MION", "MOCO", "MULA", "PEDA", "PEDO", "PENE", "PUTA", "PUTO", "QULO", "RATA", "RUIN"
+    };
+
     public TenDigitsCodeCalculator(Person person) {
 
         this.person = person;
@@ -24,13 +30,96 @@ class TenDigitsCodeCalculator {
 
     public String calculate() {
 
+        return obfuscateForbiddenWords(nameCode()) + birthdayCode();
+    }
+
+    private String obfuscateForbiddenWords(String nameCode) {
+
+        for (String forbidden : FORBIDDEN_WORDS) {
+            if (forbidden.equals(nameCode)) {
+                return nameCode.substring(0, 3) + "X";
+            }
+        }
+        return nameCode;
+    }
+
+    private String nameCode() {
+
+        if (isFirstLastNameEmpty()) {
+            return firstLastNameEmptyForm();
+        } else if (isSecondLastNameEmpty()) {
+            return secondLastNameEmptyForm();
+        } else if (isFirstLastNameIsTooShort()) {
+            return firstLastNameTooShortForm();
+        } else {
+            return normalForm();
+        }
+    }
+
+    private String secondLastNameEmptyForm() {
+
+        return firstTwoLettersOf(person.firstLastName)
+                + firstTwoLettersOf(filterName(person.name));
+    }
+
+    private String birthdayCode() {
+
+        return lastTwoDigitsOf(person.year)
+                + formattedInTwoDigits(person.month)
+                + formattedInTwoDigits(person.day);
+    }
+
+    private boolean isSecondLastNameEmpty() {
+
+        return StringUtils.isEmpty(normalize(person.secondLastName));
+    }
+
+    private String firstLastNameEmptyForm() {
+
+        return firstTwoLettersOf(person.secondLastName)
+                + firstTwoLettersOf(filterName(person.name));
+    }
+
+    private boolean isFirstLastNameEmpty() {
+
+        return StringUtils.isEmpty(normalize(person.firstLastName));
+    }
+
+    private String firstLastNameTooShortForm() {
+
+        return firstLetterOf(person.firstLastName)
+                + firstLetterOf(person.secondLastName)
+                + firstTwoLettersOf(filterName(person.name));
+    }
+
+    private String firstTwoLettersOf(String word) {
+
+        String normalizedWord = normalize(word);
+        return normalizedWord.charAt(0) + "" + normalizedWord.charAt(1);
+    }
+
+    private boolean isFirstLastNameIsTooShort() {
+
+        return normalize(person.firstLastName).length() <= 2;
+    }
+
+    private String normalForm() {
+
         return firstLetterOf(person.firstLastName)
                 + firstVowelExcludingFirstCharacterOf(person.firstLastName)
                 + firstLetterOf(person.secondLastName)
-                + firstLetterOf(person.name)
-                + lastTwoDigitsOf(person.year)
-                + formattedInTwoDigits(person.month)
-                + formattedInTwoDigits(person.day);
+                + firstLetterOf(filterName(person.name));
+    }
+
+    private String filterName(String name) {
+
+        String rawName = normalize(name).trim();
+        if (rawName.contains(" ")) {
+            if (rawName.startsWith("MARIA") || rawName.startsWith("JOSE")) {
+                return rawName.split(" ")[1];
+            }
+        }
+        return name;
     }
 
     private String formattedInTwoDigits(int number) {
@@ -51,8 +140,12 @@ class TenDigitsCodeCalculator {
 
     private String normalize(String word) {
 
-        String normalizedWord = StringUtils.stripAccents(word).toUpperCase();
-        return removeSpecialParticles(normalizedWord, SPECIAL_PARTICLES);
+        if (StringUtils.isEmpty(word)) {
+            return word;
+        } else {
+            String normalizedWord = StringUtils.stripAccents(word).toUpperCase();
+            return removeSpecialParticles(normalizedWord, SPECIAL_PARTICLES);
+        }
     }
 
     private String removeSpecialParticles(String word, String[] specialParticles) {
