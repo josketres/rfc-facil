@@ -26,6 +26,22 @@ print(rfc.homoclave);         // CK
 print(rfc.verificationDigit); // 6
 ```
 
+Download
+--------
+
+Baja directamente [el archivo JAR de la versión más actual][2] o declara la dependencia vía Maven:
+```xml
+<dependency>
+  <groupId>com.josketres</groupId>
+  <artifactId>rfcfacil</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+o Gradle:
+```groovy
+compile 'com.josketres:rfcfacil:1.0.0'
+```
+
 Fuentes
 ---
 Esta librería se basa en documentación oficial obtenida por medio del IFAI (Instituto Federal de Acceso a la Información). El documento puede ser consultado en el sitio de [INFOMEX](https://www.infomex.org.mx/gobiernofederal/moduloPublico/moduloPublico.action) con el folio `0610100135506`.
@@ -49,3 +65,5 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+ [2]: https://search.maven.org/remote_content?g=com.josketres&a=rfcfacil&v=LATEST
