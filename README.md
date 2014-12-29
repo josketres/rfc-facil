@@ -9,7 +9,7 @@ Uso
 ---
 Calcular el rfc de una persona física es muy sencillo:
 ```java
-// Josue Zarzosa de la Torre nacido el 5 de Agosto de 1987
+// Josué Zarzosa de la Torre nacido el 5 de Agosto de 1987
 Rfc rfc = new Rfc.Builder()
             .name("Josué")
             .firstLastName("Zarzosa")
@@ -18,13 +18,18 @@ Rfc rfc = new Rfc.Builder()
             .build();
 
 // se puede obtener el rfc completo
-System.out.println(rfc.toString());        // ZATJ 870805 CK6
+print(rfc.toString());        // ZATJ 870805 CK6
 
 // se pueden obtener partes del rfc
-System.out.println(rfc.tenDigitsCode);     // ZATJ 870805
-System.out.println(rfc.homoclave);         // CK
-System.out.println(rfc.verificationDigit); // 6
+print(rfc.tenDigitsCode);     // ZATJ 870805
+print(rfc.homoclave);         // CK
+print(rfc.verificationDigit); // 6
 ```
+
+Fuentes
+---
+Esta libreria se basa en documentacion oficial obtenida por medio del IFAI (Instituto Federal de Acceso a la Información) El documento puede ser consultado en el sitio de [INFOMEX](https://www.infomex.org.mx/gobiernofederal/moduloPublico/moduloPublico.action) con el folio 0610100135506.
+
 License
 -------
 
