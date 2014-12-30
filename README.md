@@ -52,7 +52,7 @@ Cabe advertir que sólo la Secretaría de Hacienda y Crédito Público, a travé
 License
 -------
 
-    Copyright 2014 Josué Zarzosa
+    Copyright 2014 Josué Zarzosa de la Torre
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
