@@ -34,7 +34,7 @@
 
 <p>Calcular el rfc de una persona física es muy sencillo:</p>
 
-<pre><code>// Josué Zarzosa de la Torre nacido el 5 de Agosto de 1987
+<pre class="prettyprint">// Josué Zarzosa de la Torre nacido el 5 de Agosto de 1987
 Rfc rfc = new Rfc.Builder()
             .name("Josué")
             .firstLastName("Zarzosa")
@@ -49,7 +49,7 @@ print(rfc.toString());        // ZATJ 870805 CK6
 print(rfc.tenDigitsCode);     // ZATJ 870805
 print(rfc.homoclave);         // CK
 print(rfc.verificationDigit); // 6
-</code></pre>
+</pre>
 
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
@@ -68,18 +68,18 @@ print(rfc.verificationDigit); // 6
 
 <h3 id="license">License</h3>
 <pre>Copyright 2015 Josué Zarzosa de la Torre
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
+
 http://www.apache.org/licenses/LICENSE-2.0
+
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.</pre>
-
-
-
 
       </section>
       <footer>
@@ -88,6 +88,10 @@ limitations under the License.</pre>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="javascripts/prettify.js"></script>
+     <script>
+      prettyPrint();
+      </script>
   </body>
 </html>
