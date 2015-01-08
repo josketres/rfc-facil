@@ -253,3 +253,23 @@ footer {
     color:#444;
   }
 }
+
+
+/****************************************************************\
+**** Syntax highlighting styles ********************************
+\****************************************************************/
+.pln { color: #000; }
+.str { color: #399395; }
+.kwd { color: #666; }
+.com { color: #399395; }
+.typ { color: #222; }
+.lit { color: #666; }
+.pun { color: #888; }
+.opn { color: #888; }
+.clo { color: #888; }
+.tag { color: #399395; }
+.atn { color: #606; }
+.atv { color: #080; }
+.dec { color: #606; }
+.var { color: #606; }
+.fun { color: #f00; }
