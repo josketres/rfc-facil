@@ -49,25 +49,34 @@ Tratándose de Personas Físicas Asalariadas, se formará con los datos que prop
 * Una vez asignada la clave a 10 posiciones, la autoridad fiscal generará 2 posiciones para la clave diferenciadora de homonimia y una posición para el dígito verificador.
 * La clave completa de Registro Federal de Contribuyentes consta de 13 posiciones.
 
-2.1 PERSONAS MORALES
+### 2.1 PERSONAS MORALES
 
-REGLA 1ª.
+#### REGLA 1ª.
 
-    Para la formación de la clave se tomarán como elemento de orden, las tres primeras letras de las tres primeras palabras de la denominación o razón social tal y como esté manifestando en la copia del acta constitutiva o en caso en la copia del documento que motivó su origen, ejemplo:
+Para la formación de la clave se tomarán como elemento de orden, las tres primeras letras de las tres primeras palabras de la denominación o razón social tal y como esté manifestando en la copia del acta constitutiva o en caso en la copia del documento que motivó su origen, ejemplo:
 
-Sonora Industrial Azucarera, S. de R. L.
+`Sonora Industrial Azucarera, S. de R. L.`
 
-           Primera Palabra: Sonora                  S
+<table>
+<tr>
+<td>Primera Palabra: Sonora</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Segunda palabra: Industrial</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Tercera Palabra: Azucarera</td>
+<td>A</td>
+</tr>
+</table>
 
-          Segunda palabra: Industrial                I
+Resultado de la expresión alfabética: `SIA`
 
-          Tercera palabra: Azucarera                A
+#### REGLA 2ª.
 
-          Resultado de la expresión alfabética:         SIA
-
-REGLA 2ª.
-
-     A continuación se anotará la fecha de constitución o creación, en el siguiente orden:
+A continuación se anotará la fecha de constitución o creación, en el siguiente orden:
 
 Año: Se tomarán las dos últimas cifras, escribiéndolas con números                   arábigos.
 
