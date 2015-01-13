@@ -78,67 +78,52 @@ Resultado de la expresión alfabética: `SIA`
 
 A continuación se anotará la fecha de constitución o creación, en el siguiente orden:
 
-Año: Se tomarán las dos últimas cifras, escribiéndolas con números                   arábigos.
-
-Mes: Se tomará el mes de constitución o creación, en su número de orden, en un año calendario escribiéndolo con números arábigos.
-
-Día: Se escribirá en números arábigos.
+* Año: Se tomarán las dos últimas cifras, escribiéndolas con números arábigos.
+* Mes: Se tomará el mes de constitución o creación, en su número de orden, en un año calendario escribiéndolo con números arábigos.
+* Día: Se escribirá en números arábigos.
 
 Ejemplo:
 
-Año:    1982         82
+    Año:    1982         82
+    Mes:    Noviembre    11
+    Día:    29           29
 
-Mes:    Noviembre   11
-
-Día:    29           29
-
-Dando como resultado la expresión numérica: 821129
+Dando como resultado la expresión numérica: 821129`
 
 Y completando con la expresión alfabético numérica tendremos:
 
-Sonora Industrial Azucarera, S. de. R.L.       SIA-821129
-
-Herrajes, Cortinas y Maquinaria, S.A.         HCM-841122
-
-Artículos de piel y Baúles, S. de R. L.         APB-791215
+    Sonora Industrial Azucarera, S. de. R.L.       SIA-821129
+    Herrajes, Cortinas y Maquinaria, S.A.          HCM-841122
+    Artículos de piel y Baúles, S. de R. L.        APB-791215
 
 Cuando en el mes o día, de la fecha de constitución, aparezca solamente un guarismo se le antepondrá un cero, ejemplos:
 
-Año: 1983       83
+    Año: 1983       83
+    Mes: Marzo      03
+    Día: 5          05
 
-Mes: Marzo      03
-
-Día: 5          05
-
-Como resultado tendremos la expresión numérica:    830305
+Como resultado tendremos la expresión numérica: 830305
 
 Y contemplando la clave alfabético numérica tendremos:
 
-Tecnología y Equipo contra Incendios, S.A.         TEC-830305
-
-Internacional Turística Flacón, S.A.               ITF-850128
-
-Artículos de Caza y Pesca, S. de R. L.              ACP-860215
+    Tecnología y Equipo contra Incendios, S.A.         TEC-830305
+    Internacional Turística Flacón, S.A.               ITF-850128
+    Artículos de Caza y Pesca, S. de R. L.             ACP-860215
 
 
 
-REGLA 3ª.
+#### REGLA 3ª.
 
 Cuando la letra inicial de cualquiera de las tres primeras palabras de la denominación o razón social sea compuesta, únicamente se anotará la inicial de esta. En la Ch la C y en la Ll la L, ejemplos:
 
-Champion Mexicana de Bujías, S.A.CMB-830702
+    Champion Mexicana de Bujías, S.A.CMB-830702
+    Casa Chávez de maquinaria, S. de R. L.CCM-800620
+    Artículos de Piel y Chamarras, S. de R.L.APC-810202
+    Llantas, Cámaras y Refacciones, S. de R.L.LCR-851015
+    Candados, Llaves y Cerraduras, S.A.CLC-830820
+    Luis Molina Llorantes y Cía., S. de R.L.LML-860911
 
-Casa Chávez de maquinaria, S. de R. L.CCM-800620
-
-Artículos de Piel y Chamarras, S. de R.L.APC-810202
-
-Llantas, Cámaras y Refacciones, S. de R.L.LCR-851015
-
-Candados, Llaves y Cerraduras, S.A.CLC-830820
-
-Luis Molina Llorantes y Cía., S. de R.L.LML-860911
-
-REGLA 4ª.
+#### REGLA 4ª.
 
 En los casos en que la denominación o razón social esté compuesta sólo de iniciales, para estos efectos se consideran palabras, por tanto deben tomarse en cuenta como tales, ejemplos:
 
