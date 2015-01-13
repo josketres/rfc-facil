@@ -2,6 +2,7 @@ package com.josketres.rfcfacil;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -124,18 +125,18 @@ class TenDigitsCodeCalculator {
 
     private String formattedInTwoDigits(int number) {
 
-        return String.format("%02d", number);
+        return String.format(Locale.getDefault(), "%02d", number);
     }
 
     private String lastTwoDigitsOf(int number) {
 
-        return number % 100 + "";
+        return String.valueOf(number % 100);
     }
 
     private String firstLetterOf(String word) {
 
         String normalizedWord = normalize(word);
-        return normalizedWord.charAt(0) + "";
+        return String.valueOf(normalizedWord.charAt(0));
     }
 
     private String normalize(String word) {
@@ -169,6 +170,6 @@ class TenDigitsCodeCalculator {
         if (!m.find()) {
             throw new IllegalArgumentException("Word doesn't contain a vowel: " + normalizedWord);
         }
-        return normalizedWord.charAt(m.start()) + "";
+        return String.valueOf(normalizedWord.charAt(m.start()));
     }
 }

@@ -82,7 +82,7 @@ class HomoclaveCalculator {
         int lastThreeDigits = pairsOfDigitsSum % 1000;
         int quo = lastThreeDigits / 34;
         int reminder = lastThreeDigits % 34;
-        homoclave = HOMOCLAVE_DIGITS.charAt(quo) + "" + HOMOCLAVE_DIGITS.charAt(reminder);
+        homoclave = String.valueOf(HOMOCLAVE_DIGITS.charAt(quo)) + String.valueOf(HOMOCLAVE_DIGITS.charAt(reminder));
     }
 
     private void sumPairsOfDigits() {
@@ -99,7 +99,7 @@ class HomoclaveCalculator {
 
         mappedFullName = "0";
         for (int i = 0; i < fullName.length(); i++) {
-            mappedFullName += mapCharacterToTwoDigitCode(fullName.charAt(i) + "");
+            mappedFullName += mapCharacterToTwoDigitCode(String.valueOf(fullName.charAt(i)));
         }
     }
 

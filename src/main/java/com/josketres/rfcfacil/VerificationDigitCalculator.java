@@ -55,7 +55,7 @@ class VerificationDigitCalculator {
     }
 
     public VerificationDigitCalculator(String rfc12Digits) {
-        
+
         this.rfc12Digits = rfc12Digits;
     }
 
@@ -72,13 +72,13 @@ class VerificationDigitCalculator {
         } else if (reminder == 10) {
             return "A";
         } else {
-            return (11 - reminder) + "";
+            return String.valueOf(11 - reminder);
         }
     }
 
     private int mapDigit(char c) {
 
-        String key = c + "";
+        String key = String.valueOf(c);
         if (!MAPPING.containsKey(key)) {
             return 0;
         } else {
