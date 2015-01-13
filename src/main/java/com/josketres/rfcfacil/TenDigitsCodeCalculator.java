@@ -96,7 +96,7 @@ class TenDigitsCodeCalculator {
     private String firstTwoLettersOf(String word) {
 
         String normalizedWord = normalize(word);
-        return normalizedWord.charAt(0) + "" + normalizedWord.charAt(1);
+        return normalizedWord.substring(0, 2);
     }
 
     private boolean isFirstLastNameIsTooShort() {

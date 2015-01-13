@@ -82,7 +82,8 @@ class HomoclaveCalculator {
         int lastThreeDigits = pairsOfDigitsSum % 1000;
         int quo = lastThreeDigits / 34;
         int reminder = lastThreeDigits % 34;
-        homoclave = String.valueOf(HOMOCLAVE_DIGITS.charAt(quo)) + String.valueOf(HOMOCLAVE_DIGITS.charAt(reminder));
+        homoclave = String.valueOf(HOMOCLAVE_DIGITS.charAt(quo))
+                + String.valueOf(HOMOCLAVE_DIGITS.charAt(reminder));
     }
 
     private void sumPairsOfDigits() {
