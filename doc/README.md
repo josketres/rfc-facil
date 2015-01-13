@@ -564,7 +564,7 @@ R.F.C. CON HOMONIMIA :  GODE561231GR
 
 
 
-A N E X O I
+### ANEXO I
 
 TABLA PARA ASIGNAR VALORES A LOS CARACTERES QUE APARECEN EN EL NOMBRE AL QUE SE LE CALCULARA LA CLAVE DIFERENCIADORA DE HOMONIMO
 
@@ -583,13 +583,7 @@ TABLA PARA ASIGNAR VALORES A LOS CARACTERES QUE APARECEN EN EL NOMBRE AL QUE SE 
 | & = 10 | M = 24 | Z = 39 |
 | A = 11 | N = 25 | Ñ = 40 |
 
-
-
-
-
-
-
-A N E X O I I
+### ANEXO II
 
 TABLA DE VALORES QUE SE ASIGNAN A LA CLAVE DIFERENCIADORA DE HOMONIMIO EN BASE AL COEFICIENTE Y AL RESIDUO
 
@@ -612,11 +606,7 @@ TABLA DE VALORES QUE SE ASIGNAN A LA CLAVE DIFERENCIADORA DE HOMONIMIO EN BASE A
 | 15 = G | 32 = Y |
 | 16 = H | 33 = Z |
 
-
-
-
-
-A N E X O I I I
+### ANEXO III
 
 TABLA DE VALORES PARA LO GENERACIÓN DEL CÓDIGO VERIFICADOR DEL REGISTRO FEDERAL DE CONTRIBUYENTES.
 
@@ -638,7 +628,7 @@ TABLA DE VALORES PARA LO GENERACIÓN DEL CÓDIGO VERIFICADOR DEL REGISTRO FEDERA
 
 TODOS LOS CARACTERES QUE NO SE ENCUNTREN EN ESTA TABLA SE LES ASIGNARA UN VALOR DE " 00 ".
 
-ANEXO IV
+### ANEXO IV
 
 LISTA COMPLETA DE PALABRAS INCONVENIENTES CON SUS PALABRAS CORRECTAS
 
@@ -666,7 +656,7 @@ LISTA COMPLETA DE PALABRAS INCONVENIENTES CON SUS PALABRAS CORRECTAS
 | QULO | QULX | RATA | RATX |
 | RUIN | RUIX |  |  |
 
-ANEXO V
+### ANEXO V
 
 LISTA DE PALABRAS QUE NO SE UTILIZAN EN LA FORMACIÓN DE LA CLAVE DEL REGISTRO FEDERAL DE CONTRIBUYENTES.
 
@@ -697,23 +687,7 @@ LISTA DE PALABRAS QUE NO SE UTILIZAN EN LA FORMACIÓN DE LA CLAVE DEL REGISTRO F
 | SA MI | COMPA&ÍA |  |
 | SRL CV MI | SRL MI |  |
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ANEXO VI
+### ANEXO VI
 
 LISTA DE CARACTERES ESPECIALES Y VALORES QUE TOMARÁN SÓLO SI ESTÁN EN FORMA INDIVIDUAL DENTRO DEL TEXTO DEL NOMBRE O DENOMINACIÓN SOCIAL
 
@@ -734,72 +708,47 @@ LISTA DE CARACTERES ESPECIALES Y VALORES QUE TOMARÁN SÓLO SI ESTÁN EN FORMA I
 | ( | ABRE PARENTESIS |  |  |
 | ) | CIERRA PARENTESIS |  |  |
 
+### PROCEDIMIENTO PARA CALCULAR EL DIGITO VERIFICADOR DEL REGISTRO FEDERAL DE CONTRIBUYENTES
 
-
-
-
-PROCEDIMIENTO PARA CALCULAR EL DIGITO VERIFICADOR DEL REGISTRO FEDERAL DE CONTRIBUYENTES
-
-1.Se asignaran los valores del Anexo III a las letras y números del registro federal de contribuyentes formado a 12 posiciones
+#### 1. Se asignaran los valores del Anexo III a las letras y números del registro federal de contribuyentes formado a 12 posiciones
 
 Ejemplo: GODE 561231GR
 
-G = 16
+    G = 16
+    O = 25
+    D = 13
+    E = 14
+    5 = 05
+    6 = 06
+    1 = 01
+    2 = 02
+    3 = 03
+    1 = 01
+    G = 16
+    R = 28
 
-O = 25
+#### 2. Una vez asignados los valores se aplicara la siguiente forma tomando como base el factor 13 en orden descendente a cada letra y número del R.F.C. para su multiplicación, de acuerdo a la siguiente formula:
 
-D = 13
-
-E = 14
-
-5 = 05
-
-6 = 06
-
-1 = 01
-
-2 = 02
-
-3 = 03
-
-1 = 01
-
-G = 16
-
-R = 28
-
-
-
-2.Una vez asignados los valores se aplicara la siguiente forma tomando como base el factor 13 en orden descendente a cada letra y número del R.F.C. para su multiplicación, de acuerdo a la siguiente formula:
-
-(Vi \* (Pi + 1)) + (Vi \* (Pi + 1)) + ..............+ (Vi \* (Pi + 1))   MOD 11
-
-Vi  Valor asociado al carácter de acuerdo a la tabla del Anexo III.
-
-Pi  Posición que ocupa el i-esimo carácter tomando de derecha a izquierda es decir P toma los valores de 1 a 12.
-
+    (Vi \* (Pi + 1)) + (Vi \* (Pi + 1)) + ..............+ (Vi \* (Pi + 1))   MOD 11
+    
+    Vi  Valor asociado al carácter de acuerdo a la tabla del Anexo III.
+    Pi  Posición que ocupa el i-esimo carácter tomando de derecha a izquierda es decir P toma los valores de 1 a 12.
 
 
 Ejemplo:
 
-D = (16(13) + 25 (12)+13 (11) +14 (10) + 05 (9) + 06 (8) + 01 (7) + 02 (6) + 03 (5) + 01 (4)+16 (3) + 28 (2)) = 1026
+    D = (16(13) + 25 (12)+13 (11) +14 (10) + 05 (9) + 06 (8) + 01 (7) + 02 (6) + 03 (5) + 01 (4)+16 (3) + 28 (2)) = 1026
 
 Donde el resultado será: 1026
 
-3.El resultado de la suma se divide entre el factor 11.
+#### 3. El resultado de la suma se divide entre el factor 11.
 
-93  cociente
+    93  cociente
+    11 | 1026
+    036
+    03  residuo
 
-11 | 1026
-
-036
-
-03  residuo
-
-Si el residuo es igual a cero, este será el valor que se le asignara al dígito verificador.
-
-Si el residuo es mayor a cero se restara este al factor 11: 11-3 =8
-
-Si el residuo es igual a 10 el dígito verificador será " A".
-
-Si el residuo es igual a cero el dígito verificador será cero. Por lo tanto " 8 " es el dígito verificador de este ejemplo:  GODE561231GR8.
+* Si el residuo es igual a cero, este será el valor que se le asignara al dígito verificador.
+* Si el residuo es mayor a cero se restara este al factor 11: 11-3 =8
+* Si el residuo es igual a 10 el dígito verificador será " A".
+* Si el residuo es igual a cero el dígito verificador será cero. Por lo tanto " 8 " es el dígito verificador de este ejemplo:  GODE561231GR8.
