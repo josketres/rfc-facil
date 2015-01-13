@@ -1,4 +1,5 @@
 Esta librería se basa en documentación oficial obtenida por medio del IFAI (Instituto Federal de Acceso a la Información). El documento puede ser consultado en el sitio de [INFOMEX](https://www.infomex.org.mx/gobiernofederal/moduloPublico/moduloPublico.action) con el folio `0610100135506`.
+
 Cabe advertir que sólo la Secretaría de Hacienda y Crédito Público, a través del Servicio de Administración Tributaria, es la única instancia que oficialmente asigna las claves de RFC a los contribuyentes que así lo soliciten, a partir de la aplicación de este procedimiento a la base de datos del Padrón de Contribuyentes, con la finalidad de identificar homonimias y evitar la duplicidad de registros.
 
 
@@ -30,25 +31,23 @@ ASI MISMO SE DESCRIBE LA FORMA EN QUE SE GENERA LA CLAVE DIFERENCIADORA (HOMONIM
 - RUTINA PARA EL CÁLCULO HOMONIMIA Y DÍGITO VERIFICADOR.
 
 
-1.1  FUENTES DE INFORMACIÓN
+### 1.1  FUENTES DE INFORMACIÓN
 
-A)Personas Morales.
+#### A) Personas Morales.
 
 Copia del acta constitutiva o en caso copia del documento que motivó su origen.
 
-B) Personas Físicas.
+#### B) Personas Físicas.
 
 Acta de Nacimiento, Cartilla, Pasaporte o Certificado de Estudios de Enseñanza Pública.
 
 Tratándose de Personas Físicas Asalariadas, se formará con los datos que proporcione el empleador (retenedor).
 
-1.2 ESTRUCTURA DE LA CLAVE
+### 1.2 ESTRUCTURA DE LA CLAVE
 
-    En cuanto a sus primeras 10 posiciones, la clave de Registro Federal de Contribuyentes, consta de un espacio, tres letras y seis dígitos para Personas Morales y de cuatro letras y seis dígitos en el caso de Personas Físicas.
-
-    Una vez asignada la clave a 10 posiciones, la autoridad fiscal generará 2 posiciones para la clave diferenciadora de homonimia y una posición para el dígito verificador.
-
-La clave completa de Registro Federal de Contribuyentes consta de 13 posiciones.
+* En cuanto a sus primeras 10 posiciones, la clave de Registro Federal de Contribuyentes, consta de un espacio, tres letras y seis dígitos para Personas Morales y de cuatro letras y seis dígitos en el caso de Personas Físicas.
+* Una vez asignada la clave a 10 posiciones, la autoridad fiscal generará 2 posiciones para la clave diferenciadora de homonimia y una posición para el dígito verificador.
+* La clave completa de Registro Federal de Contribuyentes consta de 13 posiciones.
 
 2.1 PERSONAS MORALES
 
