@@ -127,69 +127,52 @@ Cuando la letra inicial de cualquiera de las tres primeras palabras de la denomi
 
 En los casos en que la denominación o razón social esté compuesta sólo de iniciales, para estos efectos se consideran palabras, por tanto deben tomarse en cuenta como tales, ejemplos:
 
-F.A.Z., S.A.                 FAZ-870420
+    F.A.Z., S.A.                      FAZ-870420
+    U.S. Ruber Mexicana, S.A.         USR-860201
+    H. Prieto y Martínez, S. de R.L.  HPM-841221
 
-U.S. Ruber Mexicana, S.A.     USR-860201
-
-H. Prieto y Martínez, S. de R.L.  HPM-841221
-
-REGLA 5ª.
+#### REGLA 5ª.
 
 Las abreviaturas: "S. en N.C.","S. en C.", "S. de R.L.", "S. en C. por A.", "S.A.", "S.A. de C.V.", "S.N.C.", "S.C.", "A.C.", "A. en P.", "S.C.L.", "S.C.S.", que expresan tipo de sociedad en las denominaciones o razones sociales, no se tomarán en consideración para efectos de conformación de las claves, ejemplos:
 
-Guantes Industriales Guadalupe, S. en C.GIG-841215
-
-Construcciones Metálicas Mexicanas, S.A.CMM-830120
-
-Fundición de Precisión Eutectic, S. de R.L.FPE-861125
-
-
-
-
-
-REGLA 6ª.
+    Guantes Industriales Guadalupe, S. en C.     GIG-841215
+    Construcciones Metálicas Mexicanas, S.A.     CMM-830120
+    Fundición de Precisión Eutectic, S. de R.L.  FPE-861125
+    
+#### REGLA 6ª.
 
 Si la denominación o razón social se comprende de dos elementos, para efectos de la conformación de la clave, se tomará la letra inicial de la primera palabra y las dos primeras letras de la segunda, ejemplos:
 
-Fonograbaciones Cinelandia, S. de R.L.FCI-841019
+    Fonograbaciones Cinelandia, S. de R.L.  FCI-841019
+    Aceros Ecatepec, S.A.                   AEC-890130
+    Distribuidora Ges, S.A.                 DGE-850628
 
-Aceros Ecatepec, S.A. AEC-890130
-
-Distribuidora Ges, S.A.DGE-850628
-
-REGLA 7ª.
+#### REGLA 7ª.
 
 Si la denominación o razón social se compone de un solo elemento, para efectos de conformación de la clave, se tomarán las tres primeras letras consecutivas del mismo, ejemplo:
 
-Arsuyama, S.A.ARS-821129
+    Arsuyama, S.A.        ARS-821129
+    Calidra, S.A.         CAL-850920
+    Electrólisis, S.A.    ELE-840821
 
-Calidra, S.A.CAL-850920
-
-Electrólisis, S.A.ELE-840821
-
-REGLA 8ª.
+#### REGLA 8ª.
 
 Cuando la denominación o razón social se componga de un solo elemento y sus letras no completen las tres requeridas, para efectos de conformación de la clave, se tomaran las empleadas por el contribuyente y las restantes se suplirán con una "X", ejemplos:
 
-Al, S.A.     ALX-830101
+    Al, S.A.     ALX-830101
+    Z, S.A.      ZXX-860110
 
-Z, S.A.      ZXX-860110
-
-REGLA 9ª.
+#### REGLA 9ª.
 
 Cuando en la denominación o razón social figuren artículos, preposiciones y conjunciones o contracciones no se tomaran como elementos de integración de la clave, ejemplos:
 
-El abastecedor Ferretero, S.A.AFE-840510
+    El abastecedor Ferretero, S.A.                  AFE-840510
+    Cigarros la Tabacalera Mexicana, S.A. de C.V.   CTM-860901
+    Los Viajes Internacionales de Marco Polo, S.A.  VIM-824225
+    Artículos y Accesorios para Automóviles, S.A.   AAA-800521
+    Productos de la Industria del Papel, S.A.       PIP-811231
 
-Cigarros la Tabacalera Mexicana, S.A. de C.V.  CTM-860901
-
-Los Viajes Internacionales de Marco Polo, S.A. VIM-824225
-
-Artículos y Accesorios para Automóviles, S.A. AAA-800521
-
-Productos de la Industria del Papel, S.A.PIP-811231
-
-REGLA 10ª.
+#### REGLA 10ª.
 
 Cuando la denominación o razón social contenga en algún o en sus tres primeros elementos números arábigos, o números romanos, para efectos de conformación de la clave éstos se tomaran como escritos con letra y seguirán las reglas ya establecidas, ejemplos:
 
@@ -540,30 +523,6 @@ por lo tanto la homonimia será " GR " .
 
 R.F.C. CON HOMONIMIA :  GODE561231GR
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### ANEXO I
 
 TABLA PARA ASIGNAR VALORES A LOS CARACTERES QUE APARECEN EN EL NOMBRE AL QUE SE LE CALCULARA LA CLAVE DIFERENCIADORA DE HOMONIMO
@@ -710,7 +669,7 @@ LISTA DE CARACTERES ESPECIALES Y VALORES QUE TOMARÁN SÓLO SI ESTÁN EN FORMA I
 
 ### PROCEDIMIENTO PARA CALCULAR EL DIGITO VERIFICADOR DEL REGISTRO FEDERAL DE CONTRIBUYENTES
 
-#### 1. Se asignaran los valores del Anexo III a las letras y números del registro federal de contribuyentes formado a 12 posiciones
+1. Se asignaran los valores del Anexo III a las letras y números del registro federal de contribuyentes formado a 12 posiciones
 
 Ejemplo: GODE 561231GR
 
@@ -727,7 +686,7 @@ Ejemplo: GODE 561231GR
     G = 16
     R = 28
 
-#### 2. Una vez asignados los valores se aplicara la siguiente forma tomando como base el factor 13 en orden descendente a cada letra y número del R.F.C. para su multiplicación, de acuerdo a la siguiente formula:
+2. Una vez asignados los valores se aplicara la siguiente forma tomando como base el factor 13 en orden descendente a cada letra y número del R.F.C. para su multiplicación, de acuerdo a la siguiente formula:
 
     (Vi \* (Pi + 1)) + (Vi \* (Pi + 1)) + ..............+ (Vi \* (Pi + 1))   MOD 11
     
@@ -741,7 +700,7 @@ Ejemplo:
 
 Donde el resultado será: 1026
 
-#### 3. El resultado de la suma se divide entre el factor 11.
+3. El resultado de la suma se divide entre el factor 11.
 
     93  cociente
     11 | 1026
