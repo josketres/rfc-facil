@@ -130,7 +130,7 @@ class TenDigitsCodeCalculator {
 
     private String lastTwoDigitsOf(int number) {
 
-        return String.valueOf(number % 100);
+        return formattedInTwoDigits(number % 100);
     }
 
     private String firstLetterOf(String word) {

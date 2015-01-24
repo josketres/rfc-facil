@@ -14,9 +14,9 @@ public class TenDigitsCodeCalculatorTest {
     }
 
     @Test
-    public void should_calculate_ten_digits_code_for_date_with_one_digit_day() {
+    public void should_calculate_ten_digits_code_for_date_after_year_2000() {
 
-        assertThat(tenDigitsCode("Juan", "Barrios", "Fernandez", 1, 12, 1970), equalTo("BAFJ701201"));
+        assertThat(tenDigitsCode("Juan", "Barrios", "Fernandez", 1, 12, 2001), equalTo("BAFJ011201"));
     }
 
     @Test
