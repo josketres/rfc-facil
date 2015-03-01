@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="815.0459"
+   height="483.00418"
+   viewBox="0 0 815.04591 483.00419"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/Users/josketres/Documents/Bitbucket/rfc/art/app-icon.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="-325.89376 : 293.65004 : 1"
+       inkscape:vp_y="0 : 961.68412 : 0"
+       inkscape:vp_z="389.92149 : 266.44951 : 1"
+       inkscape:persp3d-origin="143.73035 : 184.3858 : 1"
+       id="perspective3336" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="449.01378"
+     inkscape:cy="211.51745"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:snap-path-clip="true"
+     inkscape:snap-path-mask="true"
+     inkscape:snap-perpendicular="true"
+     inkscape:snap-tangential="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="703"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     gridtolerance="10"
+     showborder="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(2739.8375,-438.08592)">
+    <rect
+       style="fill:#f9f9f9;fill-opacity:1;stroke:#333333;stroke-width:3.68967628;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4795"
+       width="811.3562"
+       height="479.31451"
+       x="-2737.9927"
+       y="439.93076"
+       ry="43.9608"
+       inkscape:export-filename="/Users/josketres/Documents/Bitbucket/rfc/art/logo.png"
+       inkscape:export-xdpi="55.1548"
+       inkscape:export-ydpi="55.1548" />
+    <path
+       style="fill:#333333;stroke:none;stroke-width:0.99368888;stroke-opacity:1"
+       d="m -2647.1523,-100.87305 c -97.1067,0.0413 -91.2012,6.478373 -91.2012,106.8418 l 0,51.939453 180.9492,0 449.9805,0 180.9511,0 0,-51.939453 c 0,-114.70106 7.7127,-106.72266 -139.4433,-106.72266 l -41.5078,0 -449.9805,0 -41.5059,0 c -18.3945,0 -34.3698,-0.12503 -48.2421,-0.11914 z"
+       transform="translate(0,540.36216)"
+       id="path4837"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/josketres/Documents/Bitbucket/rfc/art/logo.png"
+       inkscape:export-xdpi="55.1548"
+       inkscape:export-ydpi="55.1548" />
+    <rect
+       style="fill:#b3b3b3;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4759"
+       width="808.77527"
+       height="33.984375"
+       x="-2737.1838"
+       y="597.20325"
+       inkscape:export-xdpi="55.1548"
+       inkscape:export-ydpi="55.1548"
+       inkscape:export-filename="/Users/josketres/Documents/Bitbucket/rfc/art/logo.png" />
+    <g
+       id="g4763"
+       transform="matrix(0.8473577,0,0,0.8473577,-2366.3882,-33.383737)"
+       inkscape:export-filename="/Users/josketres/Documents/Bitbucket/rfc/art/logo.png"
+       inkscape:export-xdpi="55.1548"
+       inkscape:export-ydpi="55.1548">
+      <g
+         inkscape:export-ydpi="91.788643"
+         inkscape:export-xdpi="91.788643"
+         transform="matrix(1.5162589,0,0,1.4456668,580.62506,355.32316)"
+         id="g4765">
+        <ellipse
+           style="fill:#f9f9f9;stroke:#f9f9f9;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse4767"
+           cx="-133.63106"
+           cy="183.94666"
+           rx="18.782524"
+           ry="15.467961" />
+        <ellipse
+           style="fill:#f9f9f9;stroke:#f9f9f9;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse4769"
+           cx="-133.63106"
+           cy="227.03595"
+           rx="18.782524"
+           ry="15.467961" />
+      </g>
+      <g
+         inkscape:export-ydpi="91.788643"
+         inkscape:export-xdpi="91.788643"
+         transform="matrix(1.5162589,0,0,1.4456668,576.62506,356.12179)"
+         id="g4771">
+        <ellipse
+           style="fill:#f9f9f9;stroke:#f9f9f9;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse4773"
+           cx="-81.759232"
+           cy="183.39423"
+           rx="18.782524"
+           ry="15.467961" />
+        <ellipse
+           style="fill:#f9f9f9;stroke:#f9f9f9;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse4775"
+           cx="-81.759232"
+           cy="226.48352"
+           rx="18.782524"
+           ry="15.467961" />
+      </g>
+    </g>
+    <g
+       id="g4777"
+       transform="matrix(1.0829298,0,0,1.093172,-2028.1802,-337.59561)"
+       inkscape:export-xdpi="55.1548"
+       inkscape:export-ydpi="55.1548"
+       inkscape:export-filename="/Users/josketres/Documents/Bitbucket/rfc/art/logo.png">
+      <rect
+         y="738.27588"
+         x="-624.67548"
+         height="91.40625"
+         width="91.40625"
+         id="rect4779"
+         style="fill:#f9f9f9;stroke:none;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         y="747.34094"
+         x="-616.49042"
+         height="74.21875"
+         width="75"
+         id="rect4781"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+      <rect
+         y="754.2652"
+         x="-609.1037"
+         height="60.40807"
+         width="60.084465"
+         id="rect4783"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#f9f9f9;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:265.16513062px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-2713.1914"
+       y="862.36755"
+       id="text4829"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/josketres/Documents/Bitbucket/rfc/art/logo.png"
+       inkscape:export-xdpi="55.1548"
+       inkscape:export-ydpi="55.1548"><tspan
+         sodipodi:role="line"
+         id="tspan4831"
+         x="-2713.1914"
+         y="862.36755">RFC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:90px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-2168"
+       y="892.36218"
+       id="text4833"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/josketres/Documents/Bitbucket/rfc/art/logo.png"
+       inkscape:export-xdpi="55.1548"
+       inkscape:export-ydpi="55.1548"><tspan
+         sodipodi:role="line"
+         id="tspan4835"
+         x="-2168"
+         y="892.36218">Fácil</tspan></text>
+    <rect
+       inkscape:export-ydpi="55.1548"
+       inkscape:export-xdpi="55.1548"
+       inkscape:export-filename="/Users/josketres/Documents/Bitbucket/rfc/art/logo.png"
+       ry="43.9608"
+       y="439.93076"
+       x="-2737.9927"
+       height="479.31451"
+       width="811.3562"
+       id="rect4861"
+       style="fill:none;fill-opacity:1;stroke:#333333;stroke-width:3.68967628;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>
