@@ -1,5 +1,6 @@
 
-![RFC Fácil](https://raw.githubusercontent.com/josketres/rfc-facil/master/art/logo.png)
+RFC Fácil
+=========
 
 Libreria para calcular el Registro Federal de Contribuyentes en México (RFC) en Java.
 
