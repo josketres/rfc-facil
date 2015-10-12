@@ -50,6 +50,9 @@ Esta librería se basa en documentación oficial obtenida por medio del IFAI (In
 
 Cabe advertir que sólo la Secretaría de Hacienda y Crédito Público, a través del Servicio de Administración Tributaria, es la única instancia que oficialmente asigna las claves de RFC a los contribuyentes que así lo soliciten, a partir de la aplicación de este procedimiento a la base de datos del Padrón de Contribuyentes, con la finalidad de identificar homonimias y evitar la duplicidad de registros.
 
+### En otros Lenguajes
+- Ruby [acrogenesis/rfc_facil](https://github.com/acrogenesis/rfc_facil)
+
 License
 -------
 
