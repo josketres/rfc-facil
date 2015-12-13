@@ -116,12 +116,12 @@ Y contemplando la clave alfabético numérica tendremos:
 
 Cuando la letra inicial de cualquiera de las tres primeras palabras de la denominación o razón social sea compuesta, únicamente se anotará la inicial de esta. En la Ch la C y en la Ll la L, ejemplos:
 
-    Champion Mexicana de Bujías, S.A.CMB-830702
-    Casa Chávez de maquinaria, S. de R. L.CCM-800620
-    Artículos de Piel y Chamarras, S. de R.L.APC-810202
-    Llantas, Cámaras y Refacciones, S. de R.L.LCR-851015
-    Candados, Llaves y Cerraduras, S.A.CLC-830820
-    Luis Molina Llorantes y Cía., S. de R.L.LML-860911
+    Champion Mexicana de Bujías, S.A.           CMB-830702
+    Casa Chávez de maquinaria, S. de R. L.      CCM-800620
+    Artículos de Piel y Chamarras, S. de R.L.   APC-810202
+    Llantas, Cámaras y Refacciones, S. de R.L.  LCR-851015
+    Candados, Llaves y Cerraduras, S.A.         CLC-830820
+    Luis Molina Llorantes y Cía., S. de R.L.    LML-860911
 
 #### REGLA 4ª.
 
@@ -176,68 +176,76 @@ Cuando en la denominación o razón social figuren artículos, preposiciones y c
 
 Cuando la denominación o razón social contenga en algún o en sus tres primeros elementos números arábigos, o números romanos, para efectos de conformación de la clave éstos se tomaran como escritos con letra y seguirán las reglas ya establecidas, ejemplos:
 
-El 12, S.A.DOC-801029
+    El 12, S.A.                 DOC-801029
+    (DOCE)
 
-   (DOCE)
+    El 2 de Enero, S de R.L.    DEN-840101
+    (DOS)
 
-El 2 de Enero, S de R.L.DEN-840101
+    El 505, S.A.                QCI-851215
+    (QUINIENTOS CINCO) 
 
-       (DOS)
+    Editorial Siglo XXI, S.A.   ESV-831114
+    (VEINTIUNO)
 
-El 505, S.A.QCI-851215
-
-        (QUINIENTOS CINCO)
-
-Editorial Siglo XXI, S.A.            ESV-831114
-
-                 (VEINTIUNO)
-
-REGLA 11ª.
+#### REGLA 11ª.
 
 Cuando aparezcan formando parte de la denominación o razón social, la palabra Compañía o su abreviatura Cía., así como la palabra Sociedad o su abreviatura Soc., no se incluirán en la conformación de la clave, ejemplos:
 
-Compañía Periodística Nacional, S.A.                       PNA-861121
 
-Cía. De Artículos Eléctricos, S. de R.L.                 AEL-850110
+    Compañía Periodística Nacional, S.A.                      PNA-861121
+    Cía. De Artículos Eléctricos, S. de R.L.                  AEL-850110
+    Cía. Nal. De Subsistencias Mexicanas, S.A.                NSM-841011
+    Pimienta Hnos. y Cía., S.A.                               PHN-830228
+    Sociedad Cooperativa de Producción Agrícola de Michoacán  CPA-861016
+    Sociedad de Consumo Agrícola del Sur, S.C.L.              CAS-821110
+    Sociedad de Producción Rural de Sonora                    PRS-800101
 
-Cía. Nal. De Subsistencias Mexicanas, S.A.             NSM-841011
-
-   Pimienta Hnos. y Cía., S.A.                        PHN-830228
-
-Sociedad Cooperativa de Producción Agrícola de Michoacán CPA-861016
-
-Sociedad de Consumo Agrícola del Sur, S.C.L.           CAS-821110
-
-Sociedad de Producción Rural de Sonora               PRS-800101
-
-REGLA 12ª.
+### REGLA 12ª.
 
 Cuando aparezcan formando parte de la denominación o razón social los caracteres especiales, éstos deben de excluirse para el cálculo del homónimo y del dígito verificador. Los caracteres se interpretarán, sí y sólo si, están en forma individual dentro del texto de la denominación o razón social. (Anexo VI) Ejemplos:
 
-| DENOMINACION O RAZON SOCIAL | RFC GENERADO |
-| --- | --- |
-| LA S@NDIA S.A DE C.V. | . SND-861121 |
-| LA @ S.A. DE C.V | ARR-860120 |
-| LA @ DEL % SA DE CV | APO-830120 |
-| @ COMER.COM | ACO-800210 |
-| LAS ( BLANCAS ) | APB-700202 |
-| EL # DEL TEJADO | NET-010202 |
-| LA / DEL SUR | DSU-010102 |
-| EL C@FE.NET | CFE-030210 |
+<table>
+<tr>
+<td>DENOMINACION O RAZON SOCIAL</td><td>RFC GENERADO</td>
+</tr>
+<tr>
+<td>LA S@NDIA S.A DE C.V.</td><td>SND-861121</td>
+</tr>
+<tr>
+<td>LA @ S.A. DE C.V</td><td>ARR-860120</td>
+</tr>
+<tr>
+<td>LA @ DEL % SA DE CV</td><td>APO-830120</td>
+</tr>
+<tr>
+<td>@ COMER.COM</td><td>ACO-800210</td>
+</tr>
+<tr>
+<td>LAS ( BLANCAS )</td><td>APB-700202</td>
+</tr>
+<tr>
+<td>EL # DEL TEJADO</td><td>NET-010202</td>
+</tr>
+<tr>
+<td>LA / DEL SUR</td><td>DSU-010102</td>
+</tr>
+<tr>
+<td>EL C@FE.NET</td><td>CFE-030210</td>
+</tr>
+</table>
 
 OBSERVACIÓN:
 
 En los casos en que se presenten cambios de régimen de capital, seguirá considerándose la misma Clave de R.F.C. asignada inicialmente, ejemplos:
 
-    DATOS ACTUALES                       CAMBIOS
-
-Instrumentos Bristol, S.A. de C.V.          Instrumentos Bristol, S.A.
-
-      IBR-700104                              IBR-700104
-
-Lubricantes y Filtros, S.A.          Lubricantes y Filtros, S.A. de C.V.
-
-      LFI-571130                               LFI-571130
+    DATOS ACTUALES                        CAMBIOS
+    ------------------------------------- -----------------------------------
+    Instrumentos Bristol, S.A. de C.V.    Instrumentos Bristol, S.A.
+    IBR-700104                            IBR-700104
+    ------------------------------------- -----------------------------------
+    Lubricantes y Filtros, S.A.           Lubricantes y Filtros, S.A. de C.V.
+    LFI-571130                            LFI-571130
 
 
 
