@@ -1,4 +1,6 @@
 
+![app-doctor](https://raw.githubusercontent.com/josketres/rfc-facil/master/art/logo.png)
+
 RFC Fácil
 =========
 
