@@ -1,6 +1,6 @@
 package com.josketres.rfcfacil;
 
-class Person {
+class NaturalPerson {
 
     public final String name;
     public final String firstLastName;
@@ -9,7 +9,7 @@ class Person {
     public final int month;
     public final int year;
 
-    public Person(String name, String firstLastName, String secondLastName, int day, int month, int year) {
+    public NaturalPerson(String name, String firstLastName, String secondLastName, int day, int month, int year) {
 
         this.name = name;
         this.firstLastName = firstLastName;

@@ -55,14 +55,14 @@ class HomoclaveCalculator {
         FULL_NAME_MAPPING.put("Ñ", "40");
     }
 
-    private final Person person;
+    private final NaturalPerson person;
 
     private String fullName;
     private String mappedFullName;
     private int pairsOfDigitsSum;
     private String homoclave;
 
-    public HomoclaveCalculator(Person person) {
+    public HomoclaveCalculator(NaturalPerson person) {
 
         this.person = person;
     }

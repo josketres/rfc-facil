@@ -88,7 +88,7 @@ Ejemplo:
     Mes:    Noviembre    11
     Día:    29           29
 
-Dando como resultado la expresión numérica: 821129`
+Dando como resultado la expresión numérica: `821129`
 
 Y completando con la expresión alfabético numérica tendremos:
 
@@ -102,7 +102,7 @@ Cuando en el mes o día, de la fecha de constitución, aparezca solamente un gua
     Mes: Marzo      03
     Día: 5          05
 
-Como resultado tendremos la expresión numérica: 830305
+Como resultado tendremos la expresión numérica: `830305`
 
 Y contemplando la clave alfabético numérica tendremos:
 

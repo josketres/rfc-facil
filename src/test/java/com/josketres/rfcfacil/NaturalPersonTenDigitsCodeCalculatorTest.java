@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class TenDigitsCodeCalculatorTest {
+public class NaturalPersonTenDigitsCodeCalculatorTest {
 
     @Test
     public void should_calculate_ten_digits_code_for_simple_test_case() {
@@ -116,7 +116,7 @@ public class TenDigitsCodeCalculatorTest {
                                  String secondLastName,
                                  int day, int month, int year) {
 
-        return new TenDigitsCodeCalculator(new Person(name, firstLastName, secondLastName, day, month, year))
+        return new NaturalPersonTenDigitsCodeCalculator(new NaturalPerson(name, firstLastName, secondLastName, day, month, year))
                 .calculate();
     }
 }

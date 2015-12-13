@@ -7,13 +7,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Calculates the first ten digits of the RFC.
+ * Calculates the first ten digits of the RFC for a natural person.
  */
-class TenDigitsCodeCalculator {
+class NaturalPersonTenDigitsCodeCalculator {
 
     public static final Pattern VOWEL_PATTERN = Pattern.compile("[AEIOU]+");
 
-    private final Person person;
+    private final NaturalPerson person;
 
     public static final String[] SPECIAL_PARTICLES =
             {"DE", "LA", "LAS", "MC", "VON", "DEL", "LOS", "Y", "MAC", "VAN", "MI"};
@@ -24,7 +24,7 @@ class TenDigitsCodeCalculator {
             "MION", "MOCO", "MULA", "PEDA", "PEDO", "PENE", "PUTA", "PUTO", "QULO", "RATA", "RUIN"
     };
 
-    public TenDigitsCodeCalculator(Person person) {
+    public NaturalPersonTenDigitsCodeCalculator(NaturalPerson person) {
 
         this.person = person;
     }

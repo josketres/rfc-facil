@@ -83,15 +83,15 @@ public class HomoclaveCalculatorTest {
     public void should_calculate_same_homoclave_for_different_birthdays() {
 
         assertThat(new HomoclaveCalculator(
-                        new Person("Juan", "Perez", "Garcia", 1, 1, 1901)).calculate(),
+                        new NaturalPerson("Juan", "Perez", "Garcia", 1, 1, 1901)).calculate(),
                 equalTo(new HomoclaveCalculator(
-                        new Person("Juan", "Perez", "Garcia", 5, 8, 1987)).calculate()));
+                        new NaturalPerson("Juan", "Perez", "Garcia", 5, 8, 1987)).calculate()));
     }
 
     private String homoclave(String name, String firstLastName, String secondLastName) {
 
         return new HomoclaveCalculator(
-                new Person(name, firstLastName, secondLastName, 1, 1, 1901)).calculate();
+                new NaturalPerson(name, firstLastName, secondLastName, 1, 1, 1901)).calculate();
     }
 
 }

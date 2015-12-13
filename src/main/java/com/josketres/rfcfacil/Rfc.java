@@ -30,6 +30,7 @@ public class Rfc {
         private int day;
         private int month;
         private int year;
+        private String legalName;
 
         public Builder name(String name) {
             this.name = name;
@@ -37,30 +38,48 @@ public class Rfc {
         }
 
         public Builder firstLastName(String firstLastName) {
-
             this.firstLastName = firstLastName;
             return this;
         }
 
         public Builder secondLastName(String secondLastName) {
-
             this.secondLastName = secondLastName;
             return this;
         }
 
         public Builder birthday(int day, int month, int year) {
-
             this.day = day;
             this.month = month;
             this.year = year;
             return this;
         }
 
+        public Builder legalName(String legalName) {
+            this.legalName = legalName;
+            return this;
+        }
+
+        public Builder creationDate(int day, int month, int year) {
+            return birthday(day, month, year);
+        }
+
         public Rfc build() {
+            if (legalName != null) {
+                return buildForJuristicPerson();
+            } else {
+                return buildForNaturalPerson();
+            }
+        }
 
-            Person person = new Person(name, firstLastName, secondLastName, day, month, year);
+        private Rfc buildForJuristicPerson() {
+            return null;
+        }
 
-            String tenDigitsCode = new TenDigitsCodeCalculator(person).calculate();
+        private Rfc buildForNaturalPerson() {
+
+            NaturalPerson person = new NaturalPerson(name, firstLastName, secondLastName, day, month, year);
+
+            String tenDigitsCode = new NaturalPersonTenDigitsCodeCalculator(person).calculate();
             String homoclave = new HomoclaveCalculator(person).calculate();
             String verificationDigit = new VerificationDigitCalculator(tenDigitsCode + homoclave).calculate();
 
