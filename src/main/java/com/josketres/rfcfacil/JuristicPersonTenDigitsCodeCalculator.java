@@ -70,7 +70,7 @@ public class JuristicPersonTenDigitsCodeCalculator {
 
     private String[] ignoreWords(String[] words, String[] forbiddenWords) {
 
-        List<String> filteredWords = new LinkedList<>(Arrays.asList(words));
+        List<String> filteredWords = new LinkedList<String>(Arrays.asList(words));
         ListIterator<String> it = filteredWords.listIterator();
 
         while (it.hasNext()) {
