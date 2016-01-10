@@ -38,7 +38,6 @@ public class JuristicPersonTenDigitsCodeCalculator {
 
     private final JuristicPerson person;
 
-    private String normalizedPersonLegalName;
     private String[] words;
 
     public JuristicPersonTenDigitsCodeCalculator(JuristicPerson person) {
@@ -48,10 +47,10 @@ public class JuristicPersonTenDigitsCodeCalculator {
 
     public String calculate() {
 
-        normalizePersonLegalName();
-        ignoreJuristicPersonTypeAbbreviations();
-
-        words = splitWords()
+        words = stream(person.legalName)
+                .map(this::normalize)
+                .map(this::ignoreJuristicPersonTypeAbbreviations)
+                .flatMap(this::splitWords)
                 .filter(this::ignoreForbiddenWords)
                 .flatMap(this::splitAbbreviations)
                 .flatMap(this::expandNumerals)
@@ -60,31 +59,27 @@ public class JuristicPersonTenDigitsCodeCalculator {
         return threeDigitsCode() + "-" + birthdayCode();
     }
 
-    private void normalizePersonLegalName() {
-
-        normalizedPersonLegalName = normalize(person.legalName);
-    }
 
     // to upper case, no leading nor trailing space,  and no accents
-    private String normalize(String word) {
+    private String normalize(String string) {
 
-        if (StringUtils.isEmpty(word)) {
-            return word;
+        if (StringUtils.isEmpty(string)) {
+            return string;
         } else {
-            return StringUtils.stripAccents(word)
+            return StringUtils.stripAccents(string)
                     .toUpperCase()
                     .trim();
         }
     }
 
-    private void ignoreJuristicPersonTypeAbbreviations() {
+    private String ignoreJuristicPersonTypeAbbreviations(String string) {
 
-        normalizedPersonLegalName = normalizedPersonLegalName.replaceAll(JURISTIC_PERSON_TYPE, "");
+        return string.replaceAll(JURISTIC_PERSON_TYPE, "");
     }
 
-    private Stream<String> splitWords() {
+    private Stream<String> splitWords(String string) {
 
-        return stream(normalizedPersonLegalName.split("[, ]+"));
+        return stream(string.split("[, ]+"));
     }
 
     private boolean ignoreForbiddenWords(String word) {
@@ -100,7 +95,7 @@ public class JuristicPersonTenDigitsCodeCalculator {
             String number = normalize(SpanishNumbers.cardinal(Long.parseLong(word)));
             return stream(number.split(" "));
         } else {
-            return StreamSupport.stream(Collections.singletonList(word));
+            return stream(word);
         }
     }
 
@@ -143,5 +138,10 @@ public class JuristicPersonTenDigitsCodeCalculator {
     private static Stream<String> stream(String[] array) {
 
         return StreamSupport.stream(Arrays.asList(array));
+    }
+
+    private static Stream<String> stream(String string) {
+
+        return StreamSupport.stream(Collections.singletonList(string));
     }
 }
