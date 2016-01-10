@@ -35,6 +35,7 @@ public class JuristicPersonTenDigitsCodeCalculator {
 
     private final JuristicPerson person;
 
+    private String normalizedPersonLegalName;
     private String[] words;
 
     public JuristicPersonTenDigitsCodeCalculator(JuristicPerson person) {
@@ -44,13 +45,21 @@ public class JuristicPersonTenDigitsCodeCalculator {
 
     public String calculate() {
 
-        words = normalize(person.legalName).split("[, ]+");
+        normalizePersonLegalName();
+        ignoreJuristicPersonTypeAbbreviations();
+        splitInWords();
         ignoreForbiddenWords();
         splitAbbreviations();
         convertNumeralsToWords();
         return threeDigitsCode() + "-" + birthdayCode();
     }
 
+    private void normalizePersonLegalName() {
+
+        normalizedPersonLegalName = normalize(person.legalName);
+    }
+
+    // to upper case, no leading nor trailing space,  and no accents
     private String normalize(String word) {
 
         if (StringUtils.isEmpty(word)) {
@@ -58,9 +67,18 @@ public class JuristicPersonTenDigitsCodeCalculator {
         } else {
             return StringUtils.stripAccents(word)
                     .toUpperCase()
-                    .trim()
-                    .replaceAll(JURISTIC_PERSON_TYPE, "");
+                    .trim();
         }
+    }
+
+    private void ignoreJuristicPersonTypeAbbreviations() {
+
+        normalizedPersonLegalName = normalizedPersonLegalName.replaceAll(JURISTIC_PERSON_TYPE, "");
+    }
+
+    private void splitInWords() {
+
+        words = normalizedPersonLegalName.split("[, ]+");
     }
 
     private void ignoreForbiddenWords() {
