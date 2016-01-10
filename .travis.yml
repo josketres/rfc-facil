@@ -1,5 +1,6 @@
 language: java
 jdk:
+  - oraclejdk6
   - oraclejdk8
 before_install:
   - export JAVA6_HOME=/usr/lib/jvm/java-6-oracle
