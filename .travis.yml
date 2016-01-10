@@ -2,7 +2,6 @@ language: java
 jdk:
   - oraclejdk8
 install:
- - ./gradlew clean assemble
- - jdk_switcher use openjdk6
- - env
- - ./gradlew test
+  - jdk_switcher use openjdk6 && export JAVA6_HOME=$JAVA_HOME
+  - jdk_switcher use oraclejdk8 && export JAVA8_HOME=$JAVA_HOME
+  - ./gradlew check
