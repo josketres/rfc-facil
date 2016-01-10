@@ -1,7 +1,18 @@
 apply plugin: 'java'
+apply plugin: 'me.tatarka.retrolambda'
 
-sourceCompatibility = 1.6
+sourceCompatibility = 1.8
 version = '1.0.2-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.2.4'
+    }
+}
 
 repositories {
     mavenCentral()
