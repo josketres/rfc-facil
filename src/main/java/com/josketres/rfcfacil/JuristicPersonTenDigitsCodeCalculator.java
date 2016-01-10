@@ -1,5 +1,6 @@
 package com.josketres.rfcfacil;
 
+import java8.util.stream.StreamSupport;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -83,7 +84,7 @@ public class JuristicPersonTenDigitsCodeCalculator {
 
     private void ignoreForbiddenWords() {
 
-        words = Arrays.asList(words).stream()
+        words = StreamSupport.stream(Arrays.asList(words))
                 .filter(w -> !isWordForbidden(w, FORBIDDEN_WORDS))
                 .toArray(String[]::new);
     }
