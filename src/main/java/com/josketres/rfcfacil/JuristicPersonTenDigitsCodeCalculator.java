@@ -1,10 +1,12 @@
 package com.josketres.rfcfacil;
 
+import java8.util.stream.Stream;
 import java8.util.stream.StreamSupport;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.*;
-import java.util.regex.Pattern;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Locale;
 
 /**
  * Calculates the first ten digits of the RFC for a juristic person.
@@ -48,10 +50,13 @@ public class JuristicPersonTenDigitsCodeCalculator {
 
         normalizePersonLegalName();
         ignoreJuristicPersonTypeAbbreviations();
-        splitInWords();
-        ignoreForbiddenWords();
-        splitAbbreviations();
-        convertNumeralsToWords();
+
+        words = splitWords()
+                .filter(this::ignoreForbiddenWords)
+                .flatMap(this::splitAbbreviations)
+                .flatMap(this::expandNumerals)
+                .toArray(String[]::new);
+
         return threeDigitsCode() + "-" + birthdayCode();
     }
 
@@ -77,53 +82,26 @@ public class JuristicPersonTenDigitsCodeCalculator {
         normalizedPersonLegalName = normalizedPersonLegalName.replaceAll(JURISTIC_PERSON_TYPE, "");
     }
 
-    private void splitInWords() {
+    private Stream<String> splitWords() {
 
-        words = normalizedPersonLegalName.split("[, ]+");
+        return stream(normalizedPersonLegalName.split("[, ]+"));
     }
 
-    private void ignoreForbiddenWords() {
-
-        words = StreamSupport.stream(Arrays.asList(words))
-                .filter(w -> !isWordForbidden(w, FORBIDDEN_WORDS))
-                .toArray(String[]::new);
+    private boolean ignoreForbiddenWords(String word) {
+        return stream(FORBIDDEN_WORDS).noneMatch(f -> word.equalsIgnoreCase(f));
     }
 
-    private boolean isWordForbidden(String word, String[] forbiddenWords) {
+    private Stream<String> splitAbbreviations(String w) {
+        return stream(w.split("[\\. ]+"));
+    }
 
-        for (String ignoredWord : forbiddenWords) {
-            if (word.equalsIgnoreCase(ignoredWord)) {
-                return true;
-            }
+    private Stream<String> expandNumerals(String word) {
+        if (word.matches("[0-9]+")) {
+            String number = normalize(SpanishNumbers.cardinal(Long.parseLong(word)));
+            return stream(number.split(" "));
+        } else {
+            return StreamSupport.stream(Collections.singletonList(word));
         }
-        return false;
-    }
-
-    private void splitAbbreviations() {
-
-        words = StringUtils.join(words, " ").split("[\\. ]+");
-    }
-
-    private void convertNumeralsToWords() {
-
-        if (!Pattern.compile("[0-9]").matcher(StringUtils.join(words)).find()) {
-            return;
-        }
-
-        List<String> convertedWords = new LinkedList<String>(Arrays.asList(words));
-        ListIterator<String> it = convertedWords.listIterator();
-        while (it.hasNext()) {
-            String word = it.next();
-            if (word.matches("[0-9]+")) {
-                it.remove();
-                String number = normalize(SpanishNumbers.cardinal(Long.parseLong(word)));
-                for (String numberWord : number.split(" ")) {
-                    it.add(numberWord);
-                }
-            }
-        }
-
-        words = convertedWords.toArray(new String[0]);
     }
 
     private String threeDigitsCode() {
@@ -160,5 +138,10 @@ public class JuristicPersonTenDigitsCodeCalculator {
     private String lastTwoDigitsOf(int number) {
 
         return formattedInTwoDigits(number % 100);
+    }
+
+    private static Stream<String> stream(String[] array) {
+
+        return StreamSupport.stream(Arrays.asList(array));
     }
 }
