@@ -1,8 +1,8 @@
 language: java
 jdk:
   - oraclejdk8
-before_install:
-  - export JAVA8_HOME=/usr/lib/jvm/java-8-oracle
 install:
+ ./gradlew clean assemble
  jdk_switcher use openjdk6
  env
+ ./gradlew test
