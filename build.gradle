@@ -4,12 +4,13 @@ sourceCompatibility = 1.6
 version = '1.0.2-SNAPSHOT'
 
 repositories {
-   mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'org.apache.commons:commons-lang3:3.0'
+    compile 'net.sourceforge.streamsupport:streamsupport:1.4.1'
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.hamcrest:hamcrest-core:1.3'

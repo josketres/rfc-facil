@@ -3,6 +3,8 @@ package com.josketres.rfcfacil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
 /**
@@ -83,16 +85,17 @@ public class JuristicPersonTenDigitsCodeCalculator {
 
     private void ignoreForbiddenWords() {
 
-        List<String> filteredWords = new LinkedList<String>(Arrays.asList(words));
-        ListIterator<String> it = filteredWords.listIterator();
-
-        while (it.hasNext()) {
-            if (isWordForbidden(it.next(), FORBIDDEN_WORDS)) {
-                it.remove();
+        words = Arrays.asList(words).stream().filter(new Predicate<String>() {
+            @Override
+            public boolean test(String word) {
+                return !isWordForbidden(word, FORBIDDEN_WORDS);
             }
-        }
-
-        words = filteredWords.toArray(new String[0]);
+        }).toArray(new IntFunction<String[]>() {
+            @Override
+            public String[] apply(int value) {
+                return new String[value];
+            }
+        });
     }
 
     private boolean isWordForbidden(String word, String[] forbiddenWords) {
