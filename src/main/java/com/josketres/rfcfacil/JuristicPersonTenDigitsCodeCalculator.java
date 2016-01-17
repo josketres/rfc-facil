@@ -86,15 +86,18 @@ public class JuristicPersonTenDigitsCodeCalculator {
     }
 
     private boolean ignoreForbiddenWords(String word) {
+
         return stream(FORBIDDEN_WORDS).noneMatch(f -> word.equalsIgnoreCase(f));
     }
 
     private String markAbbreviations(String word) {
+
         return word.replaceAll("^([^.])\\.", "$1AABBRREEVVIIAATTIIOONN");
     }
 
 
     private Stream<String> expandSpecialCharactersInSingletonWord(String word) {
+
         if (word.length() == 1) {
             return stream(word.replace("@", "ARROBA")
                     .replace("´", "APOSTROFE")
@@ -115,15 +118,18 @@ public class JuristicPersonTenDigitsCodeCalculator {
     }
 
     private String ignoreSpecialCharactersInWords(String word) {
+
         return word.replaceAll("(.+?)[@´%#!.$\"-/+\\(\\)](.+?)", "$1$2");
     }
 
 
     private Stream<String> splitAbbreviations(String w) {
+
         return stream(w.split("AABBRREEVVIIAATTIIOONN"));
     }
 
     private Stream<String> expandArabicNumerals(String word) {
+
         if (word.matches("[0-9]+")) {
             String number = normalize(SpanishNumbers.cardinal(Long.parseLong(word)));
             return stream(number.split(" "));
@@ -133,6 +139,7 @@ public class JuristicPersonTenDigitsCodeCalculator {
     }
 
     private Stream<String> expandRomanNumerals(String word) {
+
         if (RomanNumerals.isRomanNumeral(word)) {
             String number = normalize(SpanishNumbers.cardinal(RomanNumerals.parseInt(word)));
             return stream(number.split(" "));
