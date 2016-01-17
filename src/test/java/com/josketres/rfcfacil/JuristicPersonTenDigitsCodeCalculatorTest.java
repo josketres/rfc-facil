@@ -15,7 +15,7 @@ public class JuristicPersonTenDigitsCodeCalculatorTest {
         assertThat(tenDigitsCode("Sonora Industrial Azucarera, S. de R.L.", 29, 11, 1982), startsWith("SIA"));
     }
 
-    // rule 2
+    // rule 2 part 1
     @Test
     public void should_take_creation_date_in_format_yy_mm_dd() {
 
@@ -32,7 +32,6 @@ public class JuristicPersonTenDigitsCodeCalculatorTest {
     }
 
     // no test for rule 3
-
 
     // rule 4
     @Test
@@ -145,6 +144,13 @@ public class JuristicPersonTenDigitsCodeCalculatorTest {
         assertThat(tenDigitsCode("El 505, S.A.", 29, 11, 1982), startsWith("QCI"));
     }
 
+    // rule 10 - part 2 (roman numerals)
+    @Test
+    public void should_translate_roman_numerals_and_treat_them_as_words() {
+
+        assertThat(tenDigitsCode("Editorial Siglo XXI, S.A.", 29, 11, 1982), startsWith("ESV"));
+    }
+
     // rule 11
     @Test
     public void should_ignore_the_word_compania_and_its_abbreviation() {
@@ -162,6 +168,50 @@ public class JuristicPersonTenDigitsCodeCalculatorTest {
         assertThat(tenDigitsCode("Soc. de Consumo Agrícola del Sur, S.C.L. ", 29, 11, 1982), startsWith("CAS"));
     }
 
+    // rule 12 - part 1
+    @Test
+    public void should_exclude_special_characters() {
+
+        assertThat(tenDigitsCode("LA S@NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("EL C@FE.NET", 29, 11, 1982), startsWith("CFE"));
+
+        // extended examples to cover all characters from list anexo VI
+        assertThat(tenDigitsCode("LA S@NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S´NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S%NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S#NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S!NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S.NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S$NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S\"NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S-NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S/NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S+NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S(NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+        assertThat(tenDigitsCode("LA S)NDIA S.A DE C.V.", 29, 11, 1982), startsWith("SND"));
+    }
+
+    // rule 12 - part 2
+    @Test
+    public void should_expand_special_characters_that_appear_in_a_singleton_word() {
+
+        assertThat(tenDigitsCode("LA @ S.A DE C.V.", 29, 11, 1982), startsWith("ARR"));
+        assertThat(tenDigitsCode("LA @ DEL % SA DE CV", 29, 11, 1982), startsWith("APO"));
+        assertThat(tenDigitsCode("@ COMER.COM", 29, 11, 1982), startsWith("ACO"));
+        assertThat(tenDigitsCode("LAS ( BLANCAS )", 29, 11, 1982), startsWith("APB"));
+        assertThat(tenDigitsCode("EL # DEL TEJADO", 29, 11, 1982), startsWith("NTE")); // this example is wrong in the official documentation
+        assertThat(tenDigitsCode("LA / DEL SUR", 29, 11, 1982), startsWith("DSU"));
+
+        // extended examples to cover all characters from list anexo VI
+        assertThat(tenDigitsCode("LA . S.A. DE C.V.", 29, 11, 1982), startsWith("PUN"));
+        assertThat(tenDigitsCode("LA ´ S.A. DE C.V.", 29, 11, 1982), startsWith("APO"));
+        assertThat(tenDigitsCode("LA ! S.A. DE C.V.", 29, 11, 1982), startsWith("ADM"));
+        assertThat(tenDigitsCode("LA $ S.A. DE C.V.", 29, 11, 1982), startsWith("PES"));
+        assertThat(tenDigitsCode("LA \" S.A. DE C.V.", 29, 11, 1982), startsWith("COM"));
+        assertThat(tenDigitsCode("LA - S.A. DE C.V.", 29, 11, 1982), startsWith("GUI"));
+        assertThat(tenDigitsCode("LA + S.A. DE C.V.", 29, 11, 1982), startsWith("SUM"));
+        assertThat(tenDigitsCode("LA ) S.A. DE C.V.", 29, 11, 1982), startsWith("CPA"));
+    }
 
     private String tenDigitsCode(String legalName, int day, int month, int year) {
 

@@ -52,13 +52,16 @@ public class JuristicPersonTenDigitsCodeCalculator {
                 .map(this::ignoreJuristicPersonTypeAbbreviations)
                 .flatMap(this::splitWords)
                 .filter(this::ignoreForbiddenWords)
+                .map(this::markAbbreviations)
+                .flatMap(this::expandSpecialCharactersInSingletonWord)
+                .map(this::ignoreSpecialCharactersInWords)
                 .flatMap(this::splitAbbreviations)
-                .flatMap(this::expandNumerals)
+                .flatMap(this::expandArabicNumerals)
+                .flatMap(this::expandRomanNumerals)
                 .toArray(String[]::new);
 
         return threeDigitsCode() + "-" + birthdayCode();
     }
-
 
     // to upper case, no leading nor trailing space,  and no accents
     private String normalize(String string) {
@@ -86,13 +89,52 @@ public class JuristicPersonTenDigitsCodeCalculator {
         return stream(FORBIDDEN_WORDS).noneMatch(f -> word.equalsIgnoreCase(f));
     }
 
-    private Stream<String> splitAbbreviations(String w) {
-        return stream(w.split("[\\. ]+"));
+    private String markAbbreviations(String word) {
+        return word.replaceAll("^([^.])\\.", "$1AABBRREEVVIIAATTIIOONN");
     }
 
-    private Stream<String> expandNumerals(String word) {
+
+    private Stream<String> expandSpecialCharactersInSingletonWord(String word) {
+        if (word.length() == 1) {
+            return stream(word.replace("@", "ARROBA")
+                    .replace("´", "APOSTROFE")
+                    .replace("%", "PORCIENTO")
+                    .replace("#", "NUMERO")
+                    .replace("!", "ADMIRACION")
+                    .replace(".", "PUNTO")
+                    .replace("$", "PESOS")
+                    .replace("\"", "COMILLAS")
+                    .replace("-", "GUION")
+                    .replace("/", "DIAGONAL")
+                    .replace("+", "SUMA")
+                    .replace("(", "ABRE PARENTESIS")
+                    .replace(")", "CIERRA PARENTESIS")
+                    .split(" "));
+        }
+        return stream(word);
+    }
+
+    private String ignoreSpecialCharactersInWords(String word) {
+        return word.replaceAll("(.+?)[@´%#!.$\"-/+\\(\\)](.+?)", "$1$2");
+    }
+
+
+    private Stream<String> splitAbbreviations(String w) {
+        return stream(w.split("AABBRREEVVIIAATTIIOONN"));
+    }
+
+    private Stream<String> expandArabicNumerals(String word) {
         if (word.matches("[0-9]+")) {
             String number = normalize(SpanishNumbers.cardinal(Long.parseLong(word)));
+            return stream(number.split(" "));
+        } else {
+            return stream(word);
+        }
+    }
+
+    private Stream<String> expandRomanNumerals(String word) {
+        if (RomanNumerals.isRomanNumeral(word)) {
+            String number = normalize(SpanishNumbers.cardinal(RomanNumerals.parseInt(word)));
             return stream(number.split(" "));
         } else {
             return stream(word);
