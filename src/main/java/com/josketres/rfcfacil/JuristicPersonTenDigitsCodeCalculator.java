@@ -24,16 +24,21 @@ public class JuristicPersonTenDigitsCodeCalculator {
             "S\\.?N\\.?C\\.?|" +
             "A\\.?C\\.?)$";
 
+    /*
+    * This list is based on Anexo V from the official documentation
+    * but some words have been commented out because the examples from
+    * the same documentation contradict the list
+    */
     public static final String[] FORBIDDEN_WORDS = {
-            "A", "ANTE", "BAJO", "CABE", "CON", "CONTRA", "DE", "DESDE",
-            "DURANTE", "EN", "ENTRE", "HACIA", "HASTA", "MEDIANTE", "PARA",
-            "POR", "SEGUN", "SIN", "SO", "SOBRE", "TRAS", "VERSUS", "VIA",
-            "EL", "LA", "LOS", "LAS",
-            "UN", "UNA", "UNOS", "UNAS",
-            "LO", /*"AL",*/ "DEL",
-            "Y",
-            "COMPANIA", "CIA.",
-            "SOCIEDAD", "SOC."
+            "EL", "LA", "DE", "LOS", "LAS", "Y", "DEL", "MI",
+            "POR", "CON", /*"AL",*/ "SUS", "E", "PARA", "EN",
+            "MC", "VON", "MAC", "VAN",
+            "COMPANIA", "CIA", "CIA.",
+            "SOCIEDAD", "SOC", "SOC.",
+            "COMPANY", "CO",
+            /*"COOPERATIVA", "COOP",*/
+            "SC", "SCL", "SCS", "SNC", "SRL", "CV", "SA",
+            "THE", "OF", "AND", "A",
     };
 
     private final JuristicPerson person;
@@ -52,10 +57,10 @@ public class JuristicPersonTenDigitsCodeCalculator {
                 .map(this::ignoreJuristicPersonTypeAbbreviations)
                 .flatMap(this::splitWords)
                 .filter(this::ignoreForbiddenWords)
-                .map(this::markAbbreviations)
+                .map(this::markOneLetterAbbreviations)
                 .flatMap(this::expandSpecialCharactersInSingletonWord)
                 .map(this::ignoreSpecialCharactersInWords)
-                .flatMap(this::splitAbbreviations)
+                .flatMap(this::splitOneLetterAbbreviations)
                 .flatMap(this::expandArabicNumerals)
                 .flatMap(this::expandRomanNumerals)
                 .toArray(String[]::new);
@@ -90,7 +95,7 @@ public class JuristicPersonTenDigitsCodeCalculator {
         return stream(FORBIDDEN_WORDS).noneMatch(f -> word.equalsIgnoreCase(f));
     }
 
-    private String markAbbreviations(String word) {
+    private String markOneLetterAbbreviations(String word) {
 
         return word.replaceAll("^([^.])\\.", "$1AABBRREEVVIIAATTIIOONN");
     }
@@ -123,7 +128,7 @@ public class JuristicPersonTenDigitsCodeCalculator {
     }
 
 
-    private Stream<String> splitAbbreviations(String w) {
+    private Stream<String> splitOneLetterAbbreviations(String w) {
 
         return stream(w.split("AABBRREEVVIIAATTIIOONN"));
     }
