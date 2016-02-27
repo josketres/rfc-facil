@@ -18,12 +18,28 @@ Rfc rfc = new Rfc.Builder()
             .build();
 
 // se puede obtener el rfc completo
-print(rfc.toString());        // ZATJ 870805 CK6
+print(rfc.toString());        // ZATJ870805CK6
 
 // se pueden obtener partes del rfc
-print(rfc.tenDigitsCode);     // ZATJ 870805
+print(rfc.tenDigitsCode);     // ZATJ870805
 print(rfc.homoclave);         // CK
 print(rfc.verificationDigit); // 6
+```
+
+Calcular el rfc de una persona moral:
+```java
+Rfc rfc = new Rfc.Builder()
+        .legalName("Sonora Industrial Azucarera, S. de R. L.")
+        .creationDate(29, 11, 1982)
+        .build();
+        
+// se puede obtener el rfc completo
+print(rfc.toString());        // SIA-821129LS8
+
+// se pueden obtener partes del rfc
+print(rfc.tenDigitsCode);     // SIA-821129
+print(rfc.homoclave);         // LS
+print(rfc.verificationDigit); // 8
 ```
 
 Download
@@ -34,12 +50,12 @@ Baja directamente [el JAR de la versión más actual][2] o declara la dependenci
 <dependency>
   <groupId>com.josketres</groupId>
   <artifactId>rfcfacil</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 o con Gradle:
 ```groovy
-compile 'com.josketres:rfcfacil:1.0.1'
+compile 'com.josketres:rfcfacil:1.1.0'
 ```
 
 Fuentes

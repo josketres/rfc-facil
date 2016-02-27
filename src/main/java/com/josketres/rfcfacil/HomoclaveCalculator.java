@@ -55,14 +55,14 @@ class HomoclaveCalculator {
         FULL_NAME_MAPPING.put("Ñ", "40");
     }
 
-    private final NaturalPerson person;
+    private final HomoclavePerson person;
 
     private String fullName;
     private String mappedFullName;
     private int pairsOfDigitsSum;
     private String homoclave;
 
-    public HomoclaveCalculator(NaturalPerson person) {
+    public HomoclaveCalculator(HomoclavePerson person) {
 
         this.person = person;
     }
@@ -115,11 +115,10 @@ class HomoclaveCalculator {
 
     private void normalizeFullName() {
 
-        String rawFullName = (person.firstLastName + " " +
-                person.secondLastName + " " + person.name).toUpperCase();
+        String rawFullName = person.getFullNameForHomoclave().toUpperCase();
 
         fullName = StringUtils.stripAccents(rawFullName);
-        fullName = fullName.replaceAll("[\\-\\.']", ""); // remove .'-
+        fullName = fullName.replaceAll("[\\-\\.',]", ""); // remove .'-,
         fullName = addMissingCharToFullName(rawFullName, 'Ñ');
 
     }

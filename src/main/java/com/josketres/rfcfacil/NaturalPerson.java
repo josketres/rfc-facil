@@ -1,6 +1,6 @@
 package com.josketres.rfcfacil;
 
-class NaturalPerson {
+class NaturalPerson implements HomoclavePerson {
 
     public final String name;
     public final String firstLastName;
@@ -17,5 +17,10 @@ class NaturalPerson {
         this.day = day;
         this.month = month;
         this.year = year;
+    }
+
+    @Override
+    public String getFullNameForHomoclave() {
+        return firstLastName + " " + secondLastName + " " + name;
     }
 }

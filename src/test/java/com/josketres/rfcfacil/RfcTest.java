@@ -31,9 +31,9 @@ public class RfcTest {
                 .creationDate(29, 11, 1982)
                 .build();
 
-        //assertThat(rfc.tenDigitsCode, equalTo("SIA-821129"));
-        //assertThat(rfc.homoclave, equalTo("CK"));
-        //assertThat(rfc.verificationDigit, equalTo("6"));
-        //assertThat(rfc.toString(), equalTo("ZATJ870805CK6"));
+        assertThat(rfc.tenDigitsCode, equalTo("SIA-821129"));
+        assertThat(rfc.homoclave, equalTo("LS"));
+        assertThat(rfc.verificationDigit, equalTo("8"));
+        assertThat(rfc.toString(), equalTo("SIA-821129LS8"));
     }
 }

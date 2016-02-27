@@ -72,7 +72,13 @@ public class Rfc {
         }
 
         private Rfc buildForJuristicPerson() {
-            return null;
+            JuristicPerson person = new JuristicPerson(legalName, day, month, year);
+
+            String tenDigitsCode = new JuristicPersonTenDigitsCodeCalculator(person).calculate();
+            String homoclave = new HomoclaveCalculator(person).calculate();
+            String verificationDigit = new VerificationDigitCalculator(tenDigitsCode + homoclave).calculate();
+
+            return new Rfc(tenDigitsCode, homoclave, verificationDigit);
         }
 
         private Rfc buildForNaturalPerson() {

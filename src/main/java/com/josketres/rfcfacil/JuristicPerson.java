@@ -1,6 +1,6 @@
 package com.josketres.rfcfacil;
 
-class JuristicPerson {
+class JuristicPerson implements HomoclavePerson {
 
     public final String legalName;
     public final int day;
@@ -13,5 +13,10 @@ class JuristicPerson {
         this.day = day;
         this.month = month;
         this.year = year;
+    }
+
+    @Override
+    public String getFullNameForHomoclave() {
+        return legalName;
     }
 }
