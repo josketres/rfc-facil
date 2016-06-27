@@ -41,10 +41,10 @@ public class RfcTest {
                 .birthday(12, 11, 1921)
                 .build();
 
-        assertThat(rfc.tenDigitsCode, equalTo("AECS211129"));
+        assertThat(rfc.tenDigitsCode, equalTo("AECS211112"));
         assertThat(rfc.homoclave, equalTo("JP"));
         assertThat(rfc.verificationDigit, equalTo("A"));
-        assertThat(rfc.toString(), equalTo("AECS211129JPA"));
+        assertThat(rfc.toString(), equalTo("AECS211112JPA"));
 
     }
 
