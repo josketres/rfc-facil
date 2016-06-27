@@ -21,6 +21,31 @@ public class RfcTest {
         assertThat(rfc.homoclave, equalTo("CK"));
         assertThat(rfc.verificationDigit, equalTo("6"));
         assertThat(rfc.toString(), equalTo("ZATJ870805CK6"));
+
+        rfc = new Rfc.Builder()
+                .name("ELIUD")
+                .firstLastName("OROZCO")
+                .secondLastName("GOMEZ")
+                .birthday(11, 7, 1952)
+                .build();
+
+        assertThat(rfc.tenDigitsCode, equalTo("OOGE520711"));
+        assertThat(rfc.homoclave, equalTo("15"));
+        assertThat(rfc.verificationDigit, equalTo("1"));
+        assertThat(rfc.toString(), equalTo("OOGE520711151"));
+
+        rfc = new Rfc.Builder()
+                .name("SATURNINA")
+                .firstLastName("ANGEL")
+                .secondLastName("CRUZ")
+                .birthday(12, 11, 1921)
+                .build();
+
+        assertThat(rfc.tenDigitsCode, equalTo("AECS211129"));
+        assertThat(rfc.homoclave, equalTo("JP"));
+        assertThat(rfc.verificationDigit, equalTo("A"));
+        assertThat(rfc.toString(), equalTo("AECS211129JPA"));
+
     }
 
     @Test
