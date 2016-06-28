@@ -69,10 +69,14 @@ class VerificationDigitCalculator {
         int reminder = sum % 11;
         if (reminder == 0) {
             return "0";
-        } else if (reminder == 10) {
-            return "A";
         } else {
-            return String.valueOf(11 - reminder);
+            int result = 11 - reminder;
+
+            if (result == 10) {
+                return "A";
+            } else {
+                return String.valueOf(11 - reminder);
+            }
         }
     }
 
