@@ -24,6 +24,38 @@ public class RfcTest {
     }
 
     @Test
+    public void should_build_rfc_for_a_natural_person_with_verification_digit_1() {
+
+        Rfc rfc = new Rfc.Builder()
+                .name("ELIUD")
+                .firstLastName("OROZCO")
+                .secondLastName("GOMEZ")
+                .birthday(11, 7, 1952)
+                .build();
+
+        assertThat(rfc.tenDigitsCode, equalTo("OOGE520711"));
+        assertThat(rfc.homoclave, equalTo("15"));
+        assertThat(rfc.verificationDigit, equalTo("1"));
+        assertThat(rfc.toString(), equalTo("OOGE520711151"));
+    }
+
+    @Test
+    public void should_build_rfc_for_a_natural_person_with_verification_digit_A() {
+
+        Rfc rfc = new Rfc.Builder()
+                .name("SATURNINA")
+                .firstLastName("ANGEL")
+                .secondLastName("CRUZ")
+                .birthday(12, 11, 1921)
+                .build();
+
+        assertThat(rfc.tenDigitsCode, equalTo("AECS211112"));
+        assertThat(rfc.homoclave, equalTo("JP"));
+        assertThat(rfc.verificationDigit, equalTo("A"));
+        assertThat(rfc.toString(), equalTo("AECS211112JPA"));
+    }
+
+    @Test
     public void should_build_rfc_for_a_juristic_person() {
 
         Rfc rfc = new Rfc.Builder()
