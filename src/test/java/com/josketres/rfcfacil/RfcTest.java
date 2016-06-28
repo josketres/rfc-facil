@@ -21,8 +21,12 @@ public class RfcTest {
         assertThat(rfc.homoclave, equalTo("CK"));
         assertThat(rfc.verificationDigit, equalTo("6"));
         assertThat(rfc.toString(), equalTo("ZATJ870805CK6"));
+    }
 
-        rfc = new Rfc.Builder()
+    @Test
+    public void should_build_rfc_for_a_natural_person_with_verification_digit_1() {
+
+        Rfc rfc = new Rfc.Builder()
                 .name("ELIUD")
                 .firstLastName("OROZCO")
                 .secondLastName("GOMEZ")
@@ -33,8 +37,12 @@ public class RfcTest {
         assertThat(rfc.homoclave, equalTo("15"));
         assertThat(rfc.verificationDigit, equalTo("1"));
         assertThat(rfc.toString(), equalTo("OOGE520711151"));
+    }
 
-        rfc = new Rfc.Builder()
+    @Test
+    public void should_build_rfc_for_a_natural_person_with_verification_digit_A() {
+
+        Rfc rfc = new Rfc.Builder()
                 .name("SATURNINA")
                 .firstLastName("ANGEL")
                 .secondLastName("CRUZ")
@@ -45,7 +53,6 @@ public class RfcTest {
         assertThat(rfc.homoclave, equalTo("JP"));
         assertThat(rfc.verificationDigit, equalTo("A"));
         assertThat(rfc.toString(), equalTo("AECS211112JPA"));
-
     }
 
     @Test
