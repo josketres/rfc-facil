@@ -69,10 +69,8 @@ class VerificationDigitCalculator {
         int reminder = sum % 11;
         if (reminder == 0) {
             return "0";
-        } else if (reminder == 1) {
-            return "A";
         } else {
-            return String.valueOf(11 - reminder); // 1 - 9
+            return Integer.toHexString(11 - reminder).toUpperCase(); // from 1 to A (hex)
         }
     }
 
