@@ -70,13 +70,7 @@ class VerificationDigitCalculator {
         if (reminder == 0) {
             return "0";
         } else {
-            int result = 11 - reminder;
-
-            if (result == 10) {
-                return "A";
-            } else {
-                return String.valueOf(11 - reminder);
-            }
+            return Integer.toHexString(11 - reminder).toUpperCase(); // from 1 to A (hex)
         }
     }
 
