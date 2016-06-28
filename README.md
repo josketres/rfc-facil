@@ -50,12 +50,12 @@ Baja directamente [el JAR de la versión más actual][2] o declara la dependenci
 <dependency>
   <groupId>com.josketres</groupId>
   <artifactId>rfcfacil</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
 </dependency>
 ```
 o con Gradle:
 ```groovy
-compile 'com.josketres:rfcfacil:1.1.0'
+compile 'com.josketres:rfcfacil:1.1.1'
 ```
 
 Fuentes
