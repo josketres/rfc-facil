@@ -78,7 +78,7 @@ public class Rfc {
             String homoclave = new HomoclaveCalculator(person).calculate();
             String verificationDigit = new VerificationDigitCalculator(tenDigitsCode + homoclave).calculate();
 
-            return new Rfc(tenDigitsCode, homoclave, verificationDigit);
+            return new Rfc(tenDigitsCode.trim(), homoclave, verificationDigit);
         }
 
         private Rfc buildForNaturalPerson() {

@@ -13,16 +13,17 @@ import java.util.Locale;
  */
 public class JuristicPersonTenDigitsCodeCalculator {
 
-    public static final String JURISTIC_PERSON_TYPE = " (S\\.? EN N\\.?C\\.?|" +
-            "S\\.? EN C\\.? POR A\\.?|" +
-            "S\\.? EN C\\.?|" +
-            "S\\.? DE R\\.?L\\.?|" +
-            "S\\.?A\\.? DE C\\.?V\\.?|" +
-            "A\\.? EN P\\.?|" +
-            "S\\.?C\\.?[LS]\\.?|" +
-            "S\\.?[AC]\\.?|" +
-            "S\\.?N\\.?C\\.?|" +
-            "A\\.?C\\.?)$";
+    public static final String JURISTIC_PERSON_TYPE = " (S\\.?\\s?EN\\s?N\\.?\\s?C\\.?|" +
+            "S\\.?\\s?EN\\s?C\\.?\\s?POR\\s?A\\.?|" +
+            "S\\.?\\s?EN\\s?C\\.?|" +
+            "S\\.?\\s?DE\\s?R\\.?\\s?L\\.?|" +
+            "S\\.?\\s?DE\\s?R\\.?\\s?L\\.?\\s?DE\\s?C\\.?\\s?V\\.?|" +
+            "S\\.?\\s?A\\.?\\s?DE\\s?C\\.?\\s?V\\.?|" +
+            "A\\.?\\s?EN\\s?P\\.?|" +
+            "S\\.?\\s?C\\.?\\s?[LPS]\\.?|" +
+            "S\\.?\\s?[AC]\\.?|" +
+            "S\\.?\\s?N\\.?\\s?C\\.?|" +
+            "A\\.?\\s?C\\.?)$";
 
     /*
     * This list is based on Anexo V from the official documentation
@@ -65,7 +66,7 @@ public class JuristicPersonTenDigitsCodeCalculator {
                 .flatMap(this::expandRomanNumerals)
                 .toArray(String[]::new);
 
-        return threeDigitsCode() + "-" + birthdayCode();
+        return " " + threeDigitsCode() + birthdayCode();
     }
 
     // to upper case, no leading nor trailing space,  and no accents
