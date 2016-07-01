@@ -19,7 +19,7 @@ public class JuristicPersonTenDigitsCodeCalculatorTest {
     @Test
     public void should_take_creation_date_in_format_yy_mm_dd() {
 
-        assertThat(tenDigitsCode("Sonora Industrial Azucarera, S. de R.L.", 29, 11, 1982), equalTo("SIA-821129"));
+        assertThat(tenDigitsCode("Sonora Industrial Azucarera, S. de R.L.", 29, 11, 1982), equalTo("SIA821129"));
     }
 
     // rule 2 part 2
@@ -215,6 +215,6 @@ public class JuristicPersonTenDigitsCodeCalculatorTest {
 
     private String tenDigitsCode(String legalName, int day, int month, int year) {
 
-        return new JuristicPersonTenDigitsCodeCalculator(new JuristicPerson(legalName, day, month, year)).calculate();
+        return new JuristicPersonTenDigitsCodeCalculator(new JuristicPerson(legalName, day, month, year)).calculate().trim();
     }
 }
