@@ -59,13 +59,13 @@ public class RfcTest {
     public void should_build_rfc_for_a_juristic_person() {
 
         Rfc rfc = new Rfc.Builder()
-                .legalName("Sonora Industrial Azucarera, S. de R. L.")
-                .creationDate(29, 11, 1982)
+                .legalName("AUTOS PULLMAN, S.A. DE C.V.")
+                .creationDate(30, 9, 1964)
                 .build();
 
-        assertThat(rfc.tenDigitsCode, equalTo("SIA-821129"));
-        assertThat(rfc.homoclave, equalTo("LS"));
-        assertThat(rfc.verificationDigit, equalTo("8"));
-        assertThat(rfc.toString(), equalTo("SIA-821129LS8"));
+        assertThat(rfc.tenDigitsCode, equalTo("APU640930"));
+        assertThat(rfc.homoclave, equalTo("KV"));
+        assertThat(rfc.verificationDigit, equalTo("9"));
+        assertThat(rfc.toString(), equalTo("APU640930KV9"));
     }
 }
