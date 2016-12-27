@@ -8,6 +8,22 @@ import static org.hamcrest.Matchers.equalTo;
 public class RfcTest {
 
     @Test
+    public void should_build_rfc_for_a_natural_person_with_maria_abbreviation() {
+
+        Rfc rfc = new Rfc.Builder()
+                .name("MA GLORIA")
+                .firstLastName("NAVARRO")
+                .secondLastName("VILLASANA")
+                .birthday(29, 3, 1956)
+                .build();
+
+        assertThat(rfc.tenDigitsCode, equalTo("NAVG560329"));
+        assertThat(rfc.homoclave, equalTo("62"));
+        assertThat(rfc.verificationDigit, equalTo("1"));
+        assertThat(rfc.toString(), equalTo("NAVG560329621"));
+    }
+
+    @Test
     public void should_build_rfc_for_a_natural_person() {
 
         Rfc rfc = new Rfc.Builder()
