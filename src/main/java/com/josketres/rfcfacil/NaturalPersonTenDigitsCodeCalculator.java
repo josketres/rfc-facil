@@ -116,7 +116,7 @@ class NaturalPersonTenDigitsCodeCalculator {
 
         String rawName = normalize(name).trim();
         if (rawName.contains(" ")) {
-            if (rawName.startsWith("MA") || rawName.startsWith("MA.") || rawName.startsWith("MARIA") || rawName.startsWith("JOSE")) {
+            if (rawName.split(" ")[0].equals("MA") || rawName.startsWith("MA.") || rawName.startsWith("MARIA") || rawName.startsWith("JOSE")) {
                 return rawName.split(" ")[1];
             }
         }

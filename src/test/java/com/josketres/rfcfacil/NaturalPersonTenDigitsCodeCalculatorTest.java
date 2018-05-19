@@ -111,6 +111,12 @@ public class NaturalPersonTenDigitsCodeCalculatorTest {
         assertThat(tenDigitsCode("Ingrid", "Bueno", "Ezquerra", 13, 12, 1970), equalTo("BUEX701213"));
     }
 
+    @Test
+    public void should_use_ma_when_first_name_is_not_Maria() {
+        // MARCO BEGINS WITH MA BUT SHOULD NOT BE DISCARDED
+        assertThat(tenDigitsCode("Marco Antonio", "Cano", "Barraza", 13, 12, 1970), equalTo("CABM701213"));
+    }
+
     private String tenDigitsCode(String name,
                                  String firstLastName,
                                  String secondLastName,
