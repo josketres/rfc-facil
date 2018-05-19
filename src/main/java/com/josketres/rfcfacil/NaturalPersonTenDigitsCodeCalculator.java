@@ -119,7 +119,6 @@ class NaturalPersonTenDigitsCodeCalculator {
             return rawName.split(" ")[1];
         }
         return name;
-
     }
 
     private String formattedInTwoDigits(int number) {
