@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  */
 class NaturalPersonTenDigitsCodeCalculator {
 
-    public static final Pattern VOWEL_PATTERN = Pattern.compile("[AEIOU]+");
+    private static final Pattern VOWEL_PATTERN = Pattern.compile("[AEIOU]+");
 
     private final NaturalPerson person;
 
@@ -115,12 +115,11 @@ class NaturalPersonTenDigitsCodeCalculator {
     private String filterName(String name) {
 
         String rawName = normalize(name).trim();
-        if (rawName.contains(" ")) {
-            if (rawName.split(" ")[0].equals("MA") || rawName.startsWith("MA.") || rawName.startsWith("MARIA") || rawName.startsWith("JOSE")) {
-                return rawName.split(" ")[1];
-            }
+        if (rawName.matches("^(MA|MA.|MARIA|JOSE)\\s.*")) {
+            return rawName.split(" ")[1];
         }
         return name;
+
     }
 
     private String formattedInTwoDigits(int number) {
