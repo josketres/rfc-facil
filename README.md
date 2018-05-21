@@ -15,7 +15,7 @@ Rfc rfc = new Rfc.Builder()
             .firstLastName("Zarzosa")
             .secondLastName("de la Torre")
             .birthday(5, 8, 1987)
-            .build();
+            .build(); 
 
 // se puede obtener el rfc completo
 print(rfc.toString());        // ZATJ870805CK6
