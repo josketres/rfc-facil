@@ -24,7 +24,7 @@ class NaturalPersonTenDigitsCodeCalculator {
             "MION", "MOCO", "MULA", "PEDA", "PEDO", "PENE", "PUTA", "PUTO", "QULO", "RATA", "RUIN"
     };
 
-    public NaturalPersonTenDigitsCodeCalculator(NaturalPerson person) {
+    NaturalPersonTenDigitsCodeCalculator(NaturalPerson person) {
 
         this.person = person;
     }
@@ -114,11 +114,9 @@ class NaturalPersonTenDigitsCodeCalculator {
 
     private String filterName(String name) {
 
-        String rawName = normalize(name).trim();
-        if (rawName.matches("^(MA|MA.|MARIA|JOSE)\\s.*")) {
-            return rawName.split(" ")[1];
-        }
-        return name;
+        return normalize(name)
+                .trim()
+                .replaceFirst("^(MA|MA.|MARIA|JOSE)\\s+", "");
     }
 
     private String formattedInTwoDigits(int number) {
