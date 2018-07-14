@@ -7,7 +7,7 @@ Libreria para calcular el Registro Federal de Contribuyentes en México (RFC) en
 
 Uso
 ---
-Calcular el rfc de una persona física es muy sencillo:
+Calcular el rfc de una persona física:
 ```java
 // Josué Zarzosa de la Torre nacido el 5 de Agosto de 1987
 Rfc rfc = new Rfc.Builder()
