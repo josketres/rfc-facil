@@ -164,7 +164,7 @@ class NaturalPersonTenDigitsCodeCalculator {
         String normalizedWord = normalize(word).substring(1);
         Matcher m = VOWEL_PATTERN.matcher(normalizedWord);
         if (!m.find()) {
-            throw new IllegalArgumentException("Word doesn't contain a vowel: " + normalizedWord);
+            return "X";
         }
         return String.valueOf(normalizedWord.charAt(m.start()));
     }
